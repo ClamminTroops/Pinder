@@ -9,6 +9,11 @@ Main functions
     Find a match(dog picture in the button): The user takes the survey that will match the dog breed to the user. After the survey the user will get a list of most compatible dog breeds.
     Adopt a dog: Searches our database and finds the dog from our database.
     Put dog up for adoption: User fills out a form giving the necessary information to put their dog up for adoption
-# PINDER
+
+
 -Dana's note for lab 3
 -Caroline's note for lab3
+TESTING - Gavi
+*Dana's note for lab 3
+Hi it's Andre
+
