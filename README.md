@@ -1,2 +1,2 @@
 # PINDER
--Dana's note for lab 3
+*Dana's note for lab 3
