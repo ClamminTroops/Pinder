@@ -1,6 +1,5 @@
 cs262x-Clammin-Troop
 
-CS 262 Software Engineering with Keith Vander Linden Calvin College Group C Final Project
 Vision Statement
 To help customers find the right pet that fits their personality, preferences, and life style, and to give customers the information and resources to get their pet to their home.
 Main functions
