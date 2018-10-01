@@ -5,3 +5,15 @@ Databases (Justin)
    - Types of each column
    -  We need a .sql file (formatted accroding to mySQL) so we can set up the database all at once... Andrew,Gavin, and I are in the 
    CS 342 we can all create this if need be....
+   
+   Completed:
+   -discussed user stories
+   -discussed time management on Trello
+   -user interface - take a survey to specify what kind of dog you want, go through dog profiles and swipe left or right, 
+   -survey questions:
+        -allergies
+        -distance
+        -breed
+        -size of dog
+        -age
+ -Caroline to work on rough draft of pet survey
