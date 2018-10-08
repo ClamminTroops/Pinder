@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onListPethBtnPressed(View view) {
+        Intent adopt = new Intent(MainActivity.this, activity_put_pet_adoption.class);
+        startActivity(adopt);
     }
 
     public void onAdoptPetPressed(View view) {
