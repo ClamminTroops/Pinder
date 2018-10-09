@@ -5,29 +5,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".adopt_activity">
+    tools:context=".activity_adoptPet">
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/dogimage"
+        android:id="@+id/swipingpicture"
         android:layout_width="match_parent"
-        android:layout_height="276dp" />
+        android:layout_height="276sp" />
 
     <ImageButton
-        android:id="@+id/like"
+        android:id="@+id/likeBtn"
         android:layout_width="112dp"
         android:layout_height="124dp"
-        android:layout_below="@+id/dogimage"
+        android:layout_below="@+id/swipingpicture"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="-371dp"
-        android:layout_toStartOf="@+id/dislike"
+        android:layout_toStartOf="@+id/dislikeBtn"
         app:srcCompat="@drawable/heart"
         android:onClick="like"/>
 
     <ImageButton
-        android:id="@+id/dislike"
+        android:id="@+id/dislikeBtn"
         android:layout_width="111dp"
         android:layout_height="125dp"
-        android:layout_below="@+id/dogimage"
+        android:layout_below="@+id/swipingpicture"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="76dp"
         app:srcCompat="@drawable/xout"

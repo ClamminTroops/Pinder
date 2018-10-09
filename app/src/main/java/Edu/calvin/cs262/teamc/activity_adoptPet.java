@@ -11,18 +11,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class adopt_activity extends AppCompatActivity {
+public class activity_adoptPet extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adopt_activity);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.dogimage);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.swipingpicture);
         ImageAdapter adapter = new ImageAdapter(this);
         viewPager.setAdapter(adapter);
-
-
     }
 
     public void like(View view)
@@ -46,6 +44,7 @@ public class adopt_activity extends AppCompatActivity {
         };
         ImageAdapter(Context context){
             this.context=context;
+
         }
         @Override
         public int getCount() {

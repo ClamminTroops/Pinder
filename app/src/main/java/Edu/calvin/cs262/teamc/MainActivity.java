@@ -17,12 +17,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onListPethBtnPressed(View view) {
-        Intent adopt = new Intent(MainActivity.this, activity_put_pet_adoption.class);
-        startActivity(adopt);
+        Intent list = new Intent(MainActivity.this, activity_PetforAdoption.class);
+        startActivity(list);
     }
 
     public void onAdoptPetPressed(View view) {
-        Intent adopt = new Intent(MainActivity.this, adopt_activity.class);
+        Intent adopt = new Intent(MainActivity.this, activity_adoptPet.class);
         startActivity(adopt);
 
     }

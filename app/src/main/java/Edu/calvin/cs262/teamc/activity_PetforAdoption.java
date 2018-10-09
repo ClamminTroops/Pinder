@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class activity_put_pet_adoption extends AppCompatActivity {
+public class activity_PetforAdoption extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

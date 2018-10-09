@@ -6,12 +6,11 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".activity_put_pet_adoption">
+    tools:context=".activity_PetforAdoption">
 
     <TextView
         android:layout_width="142dp"
         android:layout_height="45dp"
-
         android:layout_alignTop="@+id/NameEdit"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
