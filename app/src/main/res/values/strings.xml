@@ -3,4 +3,7 @@
     <string name="mainActivity_petMatch">Match Pet</string>
     <string name="mainActivity_listPet">List A Pet</string>
     <string name="mainActivity_adoptPet">Adopt A Pet</string>
+    <string name="Breed_Required">Breed is required!</string>
+    <string name="Age_Required">Age is required!</string>
+    <string name="Name_Required">Name is required!</string>
 </resources>
