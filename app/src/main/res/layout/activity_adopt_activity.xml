@@ -8,29 +8,28 @@
     tools:context=".activity_adoptPet">
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/swipingpicture"
+        android:id="@+id/pictureWindow"
         android:layout_width="match_parent"
-        android:layout_height="276sp" />
+        android:layout_height="276dp" />
 
     <ImageButton
-        android:id="@+id/likeBtn"
-        android:layout_width="112dp"
-        android:layout_height="124dp"
-        android:layout_below="@+id/swipingpicture"
-        android:layout_marginEnd="0dp"
+        android:id="@+id/likestheDogHeartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pictureWindow"
         android:layout_marginBottom="-371dp"
-        android:layout_toStartOf="@+id/dislikeBtn"
+        android:layout_toStartOf="@+id/dislikestheDogcrossbutton"
         app:srcCompat="@drawable/heart"
-        android:onClick="like"/>
+        android:onClick="likeBtnPressed"/>
 
     <ImageButton
-        android:id="@+id/dislikeBtn"
-        android:layout_width="111dp"
-        android:layout_height="125dp"
-        android:layout_below="@+id/swipingpicture"
+        android:id="@+id/dislikestheDogcrossbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pictureWindow"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="76dp"
         app:srcCompat="@drawable/xout"
-        android:onClick="dislike"/>
+        android:onClick="dislikeBtnPressed"/>
 
 </RelativeLayout>

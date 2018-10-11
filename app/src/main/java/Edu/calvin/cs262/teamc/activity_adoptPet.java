@@ -18,19 +18,19 @@ public class activity_adoptPet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adopt_activity);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.swipingpicture);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pictureWindow);
         ImageAdapter adapter = new ImageAdapter(this);
         viewPager.setAdapter(adapter);
     }
 
-    public void like(View view)
+    public void likeBtnPressed(View view)
     {
         Toast.makeText(getApplicationContext(), "Liked!",
                 Toast.LENGTH_LONG).show();
     }
-    public void dislike(View view)
+    public void dislikeBtnPressed(View view)
     {
-        Toast.makeText(getApplicationContext(), "DisLiked!",
+        Toast.makeText(getApplicationContext(), "Disliked!",
                 Toast.LENGTH_LONG).show();
     }
 

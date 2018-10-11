@@ -17,18 +17,18 @@ public class activity_PetforAdoption extends AppCompatActivity {
         setContentView(R.layout.activity_put_pet_adoption);
     }
 
-    public void savepet(View view)
+    public void saveNewPetSwipe(View view)
     {
         EditText NameText = findViewById(R.id.NameEdit);
         EditText BreedText = findViewById(R.id.BreedText);
         EditText AgeText = findViewById(R.id.age);
 
         if( TextUtils.isEmpty(NameText.getText())){
-            NameText.setError( "Name is required!" );
+            NameText.setError( getString(R.string.Name_Required) );
         } else if( TextUtils.isEmpty(BreedText.getText())){
-            BreedText.setError( "Breed is required!" );
+            BreedText.setError( getString(R.string.Breed_Required) );
         }else if( TextUtils.isEmpty(AgeText.getText())){
-            AgeText.setError( "Age is required!" );
+            AgeText.setError( getString(R.string.Age_Required) );
         } else {
             Toast.makeText(getApplicationContext(), "Saved to database!",
                     Toast.LENGTH_LONG).show();
