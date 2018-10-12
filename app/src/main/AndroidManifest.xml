@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MatchActivity" />
+        <activity android:name=".activity_adoptPet" />
+        <activity android:name=".activity_PetforAdoption"></activity>
     </application>
 
 </manifest>

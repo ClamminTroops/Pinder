@@ -17,9 +17,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onListPethBtnPressed(View view) {
+        Intent list = new Intent(MainActivity.this, activity_PetforAdoption.class);
+        startActivity(list);
     }
 
     public void onAdoptPetPressed(View view) {
+        Intent adopt = new Intent(MainActivity.this, activity_adoptPet.class);
+        startActivity(adopt);
+
     }
 
     public void onTempLoginBtnPressed(View view) {
