@@ -6,4 +6,7 @@
     <string name="Breed_Required">Breed is required!</string>
     <string name="Age_Required">Age is required!</string>
     <string name="Name_Required">Name is required!</string>
+    <string name="resultTitleText">Your Result:</string>
+    <string name="resultBreedName">Android Pup</string>
+    <string name="resultButtonText">Adopt One</string>
 </resources>
