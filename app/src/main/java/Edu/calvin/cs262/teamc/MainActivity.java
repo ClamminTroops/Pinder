@@ -29,4 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onTempLoginBtnPressed(View view) {
     }
+
+    public void onMatchBtnPressed (View view) {
+        Intent match = new Intent(MainActivity.this,MatchActivity.class);
+        startActivity(match);
+    }
+
+
 }
