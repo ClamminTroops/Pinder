@@ -28,5 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onTempLoginBtnPressed(View view) {
+        Intent login = new Intent( MainActivity.this, activity_login.class);
+        startActivity(login);
     }
 }

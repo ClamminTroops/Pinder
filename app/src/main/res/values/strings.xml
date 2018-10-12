@@ -6,4 +6,10 @@
     <string name="Breed_Required">Breed is required!</string>
     <string name="Age_Required">Age is required!</string>
     <string name="Name_Required">Name is required!</string>
+    <string name="login_signup">Login/Signup</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="create_account">Create Account</string>
+    <string name="log_in">Log In</string>
 </resources>
