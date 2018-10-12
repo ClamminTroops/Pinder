@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="resultTitleSize">30sp</dimen>
+    <dimen name="resultImageSize">200dp</dimen>
+    <dimen name="resultSubtitleSize">25sp</dimen>
+    <dimen name="resultButtonTextSize">20sp</dimen>
+</resources>

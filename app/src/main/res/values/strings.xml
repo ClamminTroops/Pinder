@@ -3,4 +3,7 @@
     <string name="mainActivity_petMatch">Match Pet</string>
     <string name="mainActivity_listPet">List A Pet</string>
     <string name="mainActivity_adoptPet">Adopt A Pet</string>
+    <string name="resultTitleText">Your Result:</string>
+    <string name="resultBreedName">Android Pup</string>
+    <string name="resultButtonText">Adopt One</string>
 </resources>
