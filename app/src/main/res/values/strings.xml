@@ -9,4 +9,5 @@
     <string name="resultTitleText">Your Result:</string>
     <string name="resultBreedName">Android Pup</string>
     <string name="resultButtonText">Adopt One</string>
+    <string name="mainActivity_result_page">Result Page</string>
 </resources>
