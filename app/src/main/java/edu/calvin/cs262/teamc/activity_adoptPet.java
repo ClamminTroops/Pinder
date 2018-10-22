@@ -1,4 +1,4 @@
-package Edu.calvin.cs262.teamc;
+package edu.calvin.cs262.teamc;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

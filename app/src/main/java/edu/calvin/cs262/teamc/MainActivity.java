@@ -1,4 +1,4 @@
-package Edu.calvin.cs262.teamc;
+package edu.calvin.cs262.teamc;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

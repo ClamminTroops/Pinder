@@ -1,4 +1,4 @@
-package Edu.calvin.cs262.teamc;
+package edu.calvin.cs262.teamc;
 
 import org.junit.Test;
 
