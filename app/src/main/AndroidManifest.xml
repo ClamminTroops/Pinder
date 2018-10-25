@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MatchActivity" />
         <activity android:name=".activity_adoptPet" />
-        <activity android:name=".activity_PetforAdoption"></activity>
+        <activity android:name=".activity_PetforAdoption" />
+        <activity android:name=".ResultActivity" />
     </application>
 
 </manifest>

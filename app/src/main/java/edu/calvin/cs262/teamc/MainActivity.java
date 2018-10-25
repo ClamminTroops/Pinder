@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onPetMatchBtnPressed(View view) {
+        Intent list = new Intent(MainActivity.this, ResultActivity.class);
+        startActivity(list);
     }
 
     public void onListPethBtnPressed(View view) {
