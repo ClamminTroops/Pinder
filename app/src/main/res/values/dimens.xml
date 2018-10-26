@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="loginTextSize">20sp</dimen>
     <dimen name="resultTitleSize">30sp</dimen>
     <dimen name="resultImageSize">200dp</dimen>
     <dimen name="resultSubtitleSize">25sp</dimen>
