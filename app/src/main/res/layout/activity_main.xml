@@ -16,7 +16,7 @@
             android:id="@+id/petMatchBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/mainActivity_petMatch"
+            android:text="@string/mainActivity_result_page"
             android:onClick="onPetMatchBtnPressed"/>
 
         <Button
@@ -39,6 +39,14 @@
             android:layout_height="wrap_content"
             android:text="Temp Login Button"
             android:onClick="onTempLoginBtnPressed"/>
+
+        <Button
+            android:id="@+id/tempMatchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temp Match Button"
+            android:onClick="onMatchBtnPressed"/>
+
     </LinearLayout>
 
 </RelativeLayout>

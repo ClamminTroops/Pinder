@@ -12,4 +12,8 @@
     <string name="username">Username</string>
     <string name="create_account">Create Account</string>
     <string name="log_in">Log In</string>
+    <string name="resultTitleText">Your Result:</string>
+    <string name="resultBreedName">Android Pup</string>
+    <string name="resultButtonText">Adopt One</string>
+    <string name="mainActivity_result_page">Result Page</string>
 </resources>

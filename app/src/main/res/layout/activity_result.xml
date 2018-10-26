@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.calvin.cs262.teamc.ResultActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/resultTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/resultTitleText"
+            android:textAlignment="center"
+            android:textSize="@dimen/resultTitleSize"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/resultImage"
+            android:layout_width="@dimen/resultImageSize"
+            android:layout_height="@dimen/resultImageSize"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/breedName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/resultBreedName"
+            android:textAlignment="center"
+            android:textSize="@dimen/resultSubtitleSize" />
+
+         <Button
+            android:id="@+id/adoptButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/resultButtonText"
+            android:textSize="@dimen/resultButtonTextSize"
+            android:onClick="onAdoptOneBtnPressed"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+

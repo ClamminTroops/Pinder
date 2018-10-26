@@ -1,4 +1,4 @@
-package Edu.calvin.cs262.teamc;
+package edu.calvin.cs262.teamc;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onPetMatchBtnPressed(View view) {
+        Intent list = new Intent(MainActivity.this, ResultActivity.class);
+        startActivity(list);
     }
 
     public void onListPethBtnPressed(View view) {
@@ -31,4 +33,11 @@ public class MainActivity extends AppCompatActivity {
         Intent login = new Intent( MainActivity.this, activity_login.class);
         startActivity(login);
     }
+
+    public void onMatchBtnPressed (View view) {
+        Intent match = new Intent(MainActivity.this,MatchActivity.class);
+        startActivity(match);
+    }
+
+
 }
