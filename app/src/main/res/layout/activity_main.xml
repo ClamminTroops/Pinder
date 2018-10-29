@@ -13,6 +13,13 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/startQuizBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mainActivity_quiz"
+            android:onClick="onStartQuizBtnPressed"/>
+
+        <Button
             android:id="@+id/petMatchBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

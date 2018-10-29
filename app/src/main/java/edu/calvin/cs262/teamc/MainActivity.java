@@ -40,4 +40,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void onStartQuizBtnPressed(View view) {
+        Intent match = new Intent(MainActivity.this, StartQuiz.class);
+        startActivity(match);
+    }
 }
