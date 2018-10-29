@@ -16,4 +16,5 @@
     <string name="resultBreedName">Android Pup</string>
     <string name="resultButtonText">Adopt One</string>
     <string name="mainActivity_result_page">Result Page</string>
+    <string name="mainActivity_quiz">Quiz</string>
 </resources>
