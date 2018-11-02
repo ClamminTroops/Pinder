@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/whiteneddog">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -14,38 +15,39 @@
 
         <Button
             android:id="@+id/petMatchBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mainActivity_result_page"
-            android:onClick="onPetMatchBtnPressed"/>
-
-        <Button
-            android:id="@+id/listPetBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mainActivity_listPet"
-            android:onClick="onListPethBtnPressed"/>
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:onClick="onPetMatchBtnPressed"
+            android:text="@string/mainActivity_result_page" />
 
         <Button
             android:id="@+id/adoptPetBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mainActivity_adoptPet"
-            android:onClick="onAdoptPetPressed"/>
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:onClick="onAdoptPetPressed"
+            android:text="@string/mainActivity_adoptPet" />
 
         <Button
             android:id="@+id/tempLoginBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temp Login Button"
-            android:onClick="onTempLoginBtnPressed"/>
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:onClick="onTempLoginBtnPressed"
+            android:text="Temp Login Button" />
+
+        <Button
+            android:id="@+id/listPetBtn"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:onClick="onListPethBtnPressed"
+            android:text="@string/mainActivity_listPet" />
 
         <Button
             android:id="@+id/tempMatchBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temp Match Button"
-            android:onClick="onMatchBtnPressed"/>
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:onClick="onMatchBtnPressed"
+            android:text="Temp Match Button" />
+
 
     </LinearLayout>
 
