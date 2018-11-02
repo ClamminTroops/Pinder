@@ -9,10 +9,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="87dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="86dp"
         android:text="You and George have liked each other!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -42,15 +41,16 @@
         android:layout_marginBottom="106dp"
         android:text="georgethedog@gmail.com"
         tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="364dp" />
+        tools:layout_editor_absoluteY="364dp"
+        android:onClick="ACTION_SEND"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
         android:text="It's a match!"
+        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -58,7 +58,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.091" />
 
-    <ImageView
+
+     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="122dp"
         android:layout_height="156dp"
@@ -67,6 +68,7 @@
         android:layout_marginEnd="47dp"
         android:layout_marginTop="137dp"
         app:srcCompat="@drawable/beagle" />
+
 
     <ImageView
         android:id="@+id/imageView5"
