@@ -21,4 +21,14 @@
     <string name="name">Name:</string>
     <string name="email">Email</string>
     <string name="location">Location</string>
+    <string-array name="energylevels">
+        <item name="highenergy">High Energy</item>
+        <item name="mediumenergy">Medium Energy</item>
+        <item name="lowenergy">Low Energy</item>
+    </string-array>
+    <string-array name="size">
+        <item name="biganimal">Big</item>
+        <item name="mediumanimal">Medium</item>
+        <item name="lowanimal">Low</item>
+    </string-array>
 </resources>
