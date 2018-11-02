@@ -4,12 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bluegradientbackground"
     tools:context="edu.calvin.cs262.teamc.ResultActivity">
+
+    <ImageView
+        android:id="@+id/pinderLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="113dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:srcCompat="@drawable/pinderlogo" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_below="@id/pinderLogo"
         android:orientation="vertical">
 
         <TextView
@@ -25,7 +35,7 @@
             android:id="@+id/resultImage"
             android:layout_width="@dimen/resultImageSize"
             android:layout_height="@dimen/resultImageSize"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/goldenretrver"/>
 
         <TextView
             android:id="@+id/breedName"
@@ -38,9 +48,10 @@
          <Button
             android:id="@+id/adoptButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/resultButtonText"
             android:textSize="@dimen/resultButtonTextSize"
+            android:background="@drawable/bluebutton"
             android:onClick="onAdoptOneBtnPressed"
             />
 
