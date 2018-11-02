@@ -11,8 +11,8 @@
         android:layout_height="match_parent"
         android:id="@+id/myBlurImage"
         android:src="@drawable/goldenretrver"
-        android:scaleType="fitXY"
-        />
+        android:scaleType="fitXY" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"

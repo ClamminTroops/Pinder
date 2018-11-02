@@ -1,5 +1,6 @@
 package edu.calvin.cs262.teamc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void onAdoptOneBtnPressed(View view) {
+        Intent adopt = new Intent(ResultActivity.this, activity_adoptPet.class);
+        startActivity(adopt);
     }
-
 }
