@@ -17,4 +17,8 @@
     <string name="resultButtonText">Adopt One</string>
     <string name="mainActivity_result_page">Result Page</string>
     <string name="mainActivity_quiz">Quiz</string>
+    <string name="my_profile">My Profile</string>
+    <string name="name">Name:</string>
+    <string name="email">Email</string>
+    <string name="location">Location</string>
 </resources>
