@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bluebackground"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/my_profile"
+            android:textAlignment="center"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/vanderlinden" />
+
+        <LinearLayout
+            android:layout_width="325dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/lightBlue"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/name" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:background="@color/white"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/email" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:background="@color/white"
+                    android:inputType="textEmailAddress" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/location" />
+
+                <EditText
+                    android:layout_width="135dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:background="@color/white"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/myMatchesButton"
+                android:layout_width="125dp"
+                android:layout_height="45dp"
+                android:layout_gravity="start"
+                android:text="My Matches"
+                android:background="@drawable/bluebutton"
+                android:layout_marginEnd="20dp"
+                />
+
+            <Button
+                android:id="@+id/saveProfileChanges"
+                android:layout_width="140dp"
+                android:layout_height="45dp"
+                android:layout_gravity="end"
+                android:text="Save Changes"
+                android:background="@drawable/greenbutton"
+                android:onClick="saveChanges"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

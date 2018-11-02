@@ -13,13 +13,16 @@ import android.widget.Toast;
 
 public class activity_adoptPet extends AppCompatActivity {
 
+    ImageAdapter adapter;
+    ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adopt_activity);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.pictureWindow);
-        ImageAdapter adapter = new ImageAdapter(this);
+         viewPager = (ViewPager) findViewById(R.id.pictureWindow);
+        adapter = new ImageAdapter(this);
         viewPager.setAdapter(adapter);
     }
 
@@ -27,11 +30,14 @@ public class activity_adoptPet extends AppCompatActivity {
     {
         Toast.makeText(getApplicationContext(), "Liked!",
                 Toast.LENGTH_LONG).show();
+        viewPager.setCurrentItem(+1);
+
     }
     public void dislikeBtnPressed(View view)
     {
         Toast.makeText(getApplicationContext(), "Disliked!",
                 Toast.LENGTH_LONG).show();
+        viewPager.setCurrentItem(+1);
     }
 
 
