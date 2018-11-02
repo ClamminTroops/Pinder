@@ -44,4 +44,9 @@ public class MainActivity extends AppCompatActivity {
         Intent match = new Intent(MainActivity.this, StartQuiz.class);
         startActivity(match);
     }
+
+    public void onProfilePressed(View view) {
+        Intent match = new Intent(MainActivity.this, ProfileActivity.class);
+        startActivity(match);
+    }
 }

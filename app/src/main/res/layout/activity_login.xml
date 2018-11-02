@@ -5,76 +5,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_login">
+    tools:context=".activity_login"
+    android:background="@drawable/bluebackground">
 
 
     <LinearLayout
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:text="@string/log_in"
-            android:textSize='@dimen/loginTextSize'
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="125dp"
+            android:background="@drawable/blueroundsquare"
+            android:orientation="vertical"
             android:layout_marginTop="30dp"
-            />
+            android:layout_gravity="center_horizontal"
+            >
 
-        <EditText
-            android:id="@+id/loginUsername"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/username"/>
 
-        <EditText
-            android:id="@+id/loginPassword"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="@string/password"/>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:text="@string/log_in"
+                android:textSize='@dimen/loginTextSize'
+                android:layout_marginTop="20dp"
+                />
+
+            <EditText
+                android:id="@+id/loginUsername"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/username"
+                android:background="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                />
+
+            <EditText
+                android:id="@+id/loginPassword"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/logInButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
             android:text="@string/log_in"
-            android:onClick="logIn"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:text="@string/create_account"
-            android:textSize="@dimen/loginTextSize"
-            android:layout_marginTop="50dp"
+            android:onClick="logIn"
+            android:background="@drawable/bluebutton"
+            android:layout_marginTop="15dp"
             />
 
-        <EditText
-            android:id="@+id/SignUpUsername"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/username"/>
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="125dp"
+            android:background="@drawable/blueroundsquare"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            >
 
-        <EditText
-            android:id="@+id/SignUpPassword"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="@string/password"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:text="@string/create_account"
+                android:textSize="@dimen/loginTextSize"
+                android:layout_marginTop="20dp"
+                />
+
+            <EditText
+                android:id="@+id/SignUpUsername"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/username"
+                android:background="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                />
+
+            <EditText
+                android:id="@+id/SignUpPassword"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/SignUpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
             android:text="@string/sign_up"
-            android:onClick="createAccount"/>
+            android:onClick="createAccount"
+            android:background="@drawable/bluebutton"
+            android:layout_marginTop="15dp"
+
+            />
+
     </LinearLayout>
 
 </RelativeLayout>
