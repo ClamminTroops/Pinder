@@ -29,27 +29,36 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.Arrays;
 
+/* class for Pet For Adoption Activity
+ * allows users to add information about their dog and to put their
+ *      dog up for adoption
+ * TODO: delete commented-out code if code is no longer needed
+ */
 public class activity_PetforAdoption extends AppCompatActivity {
 
     BlurImageView myBlurImage;
     public Button yesbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_put_pet_adoption);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Pinder Quiz");
+
+        //set default values to ToggleButton "toggleButton4"
         ToggleButton toggleButton = findViewById(R.id.toggleButton4);
         toggleButton.setText("Female");
         toggleButton.setTextOff("Female");
         toggleButton.setTextOn("Male");
 
+        //set default values to ToggleButton "houseTrained"
         ToggleButton tg1 = findViewById(R.id.houseTrained);
         tg1.setText("No");
         tg1.setTextOff("Yes");
         tg1.setTextOn("No");
 
-
+        //TODO: explain what this piece of code does
         final TextView tv1 = findViewById(R.id.chooseFile);
         tv1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +79,10 @@ public class activity_PetforAdoption extends AppCompatActivity {
 //        myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
 //        myBlurImage.setBlur(15);
     }
+
+    /* TODO: explain what the class FileChooser does here
+     *
+     */
     public static class FileChooser {
         private static final String PARENT_DIR = "..";
 
@@ -89,12 +102,15 @@ public class activity_PetforAdoption extends AppCompatActivity {
         public interface FileSelectedListener {
             void fileSelected(File file);
         }
+
+        //TODO: add comment for this function
         public FileChooser setFileListener(FileSelectedListener fileListener) {
             this.fileListener = fileListener;
             return this;
         }
-        private FileSelectedListener fileListener;
 
+        //TODO: add comment for this function
+        private FileSelectedListener fileListener;
         public FileChooser(Activity activity) {
             this.activity = activity;
             dialog = new Dialog(activity);
@@ -118,6 +134,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
             refresh(Environment.getExternalStorageDirectory());
         }
 
+        //TODO: add comment for this function
         public void showDialog() {
             dialog.show();
         }
@@ -165,6 +182,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
                 for (File file : files ) { fileList[i++] = file.getName(); }
 
                 // refresh the user interface
+                //TODO: maybe fix code organization; Android Studio does not like the definition of getView inside setAdapter
                 dialog.setTitle(currentPath.getPath());
                 list.setAdapter(new ArrayAdapter(activity,
                         android.R.layout.simple_list_item_1, fileList) {
@@ -190,7 +208,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
         }
     }
 
-
+    // TODO: explain what this function does here
     public void saveNewPetSwipe(View view)
     {
         EditText NameText = findViewById(R.id.NameEdit);
