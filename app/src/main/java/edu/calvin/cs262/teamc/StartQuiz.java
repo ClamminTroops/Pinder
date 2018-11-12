@@ -9,6 +9,9 @@ import android.widget.Button;
 
 import com.jgabrielfreitas.core.BlurImageView;
 
+/* class for Start Quiz Activity
+ * confirms that the user wants to take the quiz
+ */
 public class StartQuiz extends AppCompatActivity {
 
     BlurImageView myBlurImage;
@@ -25,6 +28,8 @@ public class StartQuiz extends AppCompatActivity {
         myBlurImage.setBlur(15);
     }
 
+    //takes user to Take Quiz Activity on pressing button "Yes"
+    //TODO: take user back to Main Activity on pressing button "No"
     public void init(){
         yesbutton = (Button)findViewById(R.id.yesbutton);
         yesbutton.setOnClickListener(new View.OnClickListener(){

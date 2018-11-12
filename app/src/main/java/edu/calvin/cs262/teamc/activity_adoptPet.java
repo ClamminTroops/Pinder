@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+/* class for Adopt Pet Activity
+ * allows users to see profiles of dogs they can adopt
+ *      and like/dislike a dog
+ */
 public class activity_adoptPet extends AppCompatActivity {
 
     ImageAdapter adapter;
@@ -21,11 +25,16 @@ public class activity_adoptPet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adopt_activity);
 
-         viewPager = (ViewPager) findViewById(R.id.pictureWindow);
+        viewPager = (ViewPager) findViewById(R.id.pictureWindow);
         adapter = new ImageAdapter(this);
         viewPager.setAdapter(adapter);
     }
 
+    /* method for Like Button
+     * creates a toast message saying "Liked!"
+     *      TODO: add dog profile to list of matches for that user
+     *      and swipes to the next dog profile using ImageAdapter
+     */
     public void likeBtnPressed(View view)
     {
         Toast.makeText(getApplicationContext(), "Liked!",
@@ -33,6 +42,11 @@ public class activity_adoptPet extends AppCompatActivity {
         viewPager.setCurrentItem(+1);
 
     }
+
+    /* method for Dislike Button
+     * creates a toast message saying "Disliked!"
+     *      and swipes to the next dog profile using ImageAdapter
+     */
     public void dislikeBtnPressed(View view)
     {
         Toast.makeText(getApplicationContext(), "Disliked!",
@@ -40,7 +54,9 @@ public class activity_adoptPet extends AppCompatActivity {
         viewPager.setCurrentItem(+1);
     }
 
-
+    /* class ImageAdapter for handling pet swipes
+     * used specifically for swiping left or right
+     */
     private class ImageAdapter extends PagerAdapter {
         Context context;
         private int[] GalImages = new int[] {
@@ -48,6 +64,8 @@ public class activity_adoptPet extends AppCompatActivity {
                 R.drawable.puppy2
 
         };
+
+        // constructor method for ImageAdapter
         ImageAdapter(Context context){
             this.context=context;
 

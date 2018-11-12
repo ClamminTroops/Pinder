@@ -6,6 +6,11 @@ import android.os.Bundle;
 
 import com.jgabrielfreitas.core.BlurImageView;
 
+/* class for Take Quiz Activity
+ * prompts user to answers questions for the quiz
+ * TODO: Update questions for the quiz and add new quiz activities as necessary
+ * TODO: keep track of user answers to the questions
+ */
 public class TakeQuiz extends AppCompatActivity {
 
     BlurImageView myBlurImage;
