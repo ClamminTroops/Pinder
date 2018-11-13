@@ -21,13 +21,6 @@
             android:onClick="onStartQuizBtnPressed"/>
 
         <Button
-            android:id="@+id/petMatchBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onPetMatchBtnPressed"
-            android:text="@string/mainActivity_result_page" />
-
-        <Button
             android:id="@+id/adoptPetBtn"
             android:layout_width="300dp"
             android:layout_height="50dp"
@@ -35,26 +28,11 @@
             android:text="@string/mainActivity_adoptPet" />
 
         <Button
-            android:id="@+id/tempLoginBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onTempLoginBtnPressed"
-            android:text="Temp Login Button" />
-
-        <Button
             android:id="@+id/listPetBtn"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:onClick="onListPethBtnPressed"
             android:text="@string/mainActivity_listPet" />
-
-        <Button
-            android:id="@+id/tempMatchBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onMatchBtnPressed"
-            android:text="Temp Match Button" />
-
 
         <Button
             android:id="@+id/tempProfileButton"

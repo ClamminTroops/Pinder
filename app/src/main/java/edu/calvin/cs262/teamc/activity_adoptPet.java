@@ -1,6 +1,7 @@
 package edu.calvin.cs262.teamc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -37,9 +38,11 @@ public class activity_adoptPet extends AppCompatActivity {
      */
     public void likeBtnPressed(View view)
     {
-        Toast.makeText(getApplicationContext(), "Liked!",
-                Toast.LENGTH_LONG).show();
-        viewPager.setCurrentItem(+1);
+        Intent match = new Intent(activity_adoptPet.this, MatchActivity.class);
+        startActivity(match);
+//        Toast.makeText(getApplicationContext(), "Liked!",
+//                Toast.LENGTH_LONG).show();
+//        viewPager.setCurrentItem(+1);
 
     }
 

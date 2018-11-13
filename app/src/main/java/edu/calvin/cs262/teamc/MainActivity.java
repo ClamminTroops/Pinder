@@ -18,12 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //takes user to Result Activity for quiz result
-    public void onPetMatchBtnPressed(View view) {
-        Intent list = new Intent(MainActivity.this, ResultActivity.class);
-        startActivity(list);
-    }
-
     //takes user to Pet For Adoption Activity
     public void onListPethBtnPressed(View view) {
         Intent list = new Intent(MainActivity.this, activity_PetforAdoption.class);
@@ -36,17 +30,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(adopt);
     }
 
-    //takes user to Login Activity
-    public void onTempLoginBtnPressed(View view) {
-        Intent login = new Intent( MainActivity.this, activity_login.class);
-        startActivity(login);
-    }
-
-    //takes user to Match Activity
-    public void onMatchBtnPressed (View view) {
-        Intent match = new Intent(MainActivity.this,MatchActivity.class);
-        startActivity(match);
-    }
 
     //takes user to Start Quiz Activity
     public void onStartQuizBtnPressed(View view) {
