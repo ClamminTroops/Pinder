@@ -36,12 +36,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(adopt);
     }
 
-    //takes user to Login Activity
-    public void onTempLoginBtnPressed(View view) {
-        Intent login = new Intent( MainActivity.this, activity_login.class);
-        startActivity(login);
-    }
-
     //takes user to Match Activity
     public void onMatchBtnPressed (View view) {
         Intent match = new Intent(MainActivity.this,MatchActivity.class);

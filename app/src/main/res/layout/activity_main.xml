@@ -35,13 +35,6 @@
             android:text="@string/mainActivity_adoptPet" />
 
         <Button
-            android:id="@+id/tempLoginBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onTempLoginBtnPressed"
-            android:text="Temp Login Button" />
-
-        <Button
             android:id="@+id/listPetBtn"
             android:layout_width="300dp"
             android:layout_height="50dp"

@@ -13,20 +13,20 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MatchActivity" />
         <activity android:name=".activity_adoptPet" />
-        <activity android:name=".activity_login" />
+        <activity android:name=".activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activity_PetforAdoption" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".StartQuiz" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".TakeQuiz"></activity>
+        <activity android:name=".TakeQuiz"/>
     </application>
 
 </manifest>
