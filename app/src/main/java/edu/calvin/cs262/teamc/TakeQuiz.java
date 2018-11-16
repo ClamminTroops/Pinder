@@ -1,8 +1,10 @@
 package edu.calvin.cs262.teamc;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.jgabrielfreitas.core.BlurImageView;
 
@@ -13,14 +15,16 @@ import com.jgabrielfreitas.core.BlurImageView;
  */
 public class TakeQuiz extends AppCompatActivity {
 
-    BlurImageView myBlurImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_quiz);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Pinder Quiz Main");
-        myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
-        myBlurImage.setBlur(15);
+    }
+
+    public void onDoneBtnPressed (View view) {
+        Intent adopt = new Intent(TakeQuiz.this, ResultActivity.class);
+        startActivity(adopt);
     }
 }
