@@ -19,7 +19,8 @@ public class TakeQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_quiz);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Pinder Quiz Main");
+        actionBar.setTitle("");
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
         myBlurImage.setBlur(15);
     }
