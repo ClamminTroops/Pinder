@@ -14,17 +14,6 @@
         <!--android:src="@drawable/goldenretrver"-->
         <!--android:scaleType="fitXY"-->
         <!--/>-->
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/myBlurImage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/pinderlogo"
-        tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
         android:orientation="horizontal"

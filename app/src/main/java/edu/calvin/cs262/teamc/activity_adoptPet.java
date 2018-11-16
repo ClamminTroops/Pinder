@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,10 @@ public class activity_adoptPet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adopt_activity);
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("");
+
 
         viewPager = (ViewPager) findViewById(R.id.pictureWindow);
         adapter = new ImageAdapter(this);

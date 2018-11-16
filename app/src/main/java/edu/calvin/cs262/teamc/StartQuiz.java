@@ -16,13 +16,15 @@ public class StartQuiz extends AppCompatActivity {
 
     BlurImageView myBlurImage;
     public Button yesbutton;
+    public Button nobutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_quiz);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Pinder Quiz");
+        actionBar.setTitle("");
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         init();
         myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
         myBlurImage.setBlur(15);
@@ -35,6 +37,14 @@ public class StartQuiz extends AppCompatActivity {
         yesbutton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Intent toy = new Intent(getBaseContext(), TakeQuiz.class);
+                startActivity(toy);
+            }
+        });
+        nobutton = (Button)findViewById(R.id.nobutton);
+        nobutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent toy = new Intent(getBaseContext(), TakeQuiz.class);
                 startActivity(toy);
             }

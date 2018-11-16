@@ -1,6 +1,7 @@
 package edu.calvin.cs262.teamc;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,10 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("");
+
     }
 
     /* function for Adopt One Button
