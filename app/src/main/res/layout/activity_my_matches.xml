@@ -5,4 +5,10 @@
     android:layout_height="match_parent"
     tools:context="edu.calvin.cs262.teamc.MyMatchesActivity">
 
+    <ListView
+        android:id="@+id/myMatchesLv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
 </RelativeLayout>
