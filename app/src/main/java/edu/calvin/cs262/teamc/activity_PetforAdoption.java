@@ -29,10 +29,17 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.Arrays;
 
-/* class for Pet For Adoption Activity
- * allows users to add information about their dog and to put their
+//TODO: delete commented-out code if code is no longer needed
+
+/**
+ * class for Pet For Adoption Activity
+ *
+ * It allows users to add information about their dog and to put their
  *      dog up for adoption
- * TODO: delete commented-out code if code is no longer needed
+ *
+ * @author Justin Baskaran
+ * @version 1
+ * @since 16-11-2018
  */
 public class activity_PetforAdoption extends AppCompatActivity {
 
@@ -78,14 +85,14 @@ public class activity_PetforAdoption extends AppCompatActivity {
                     }).showDialog();
             }
         });
-
-
 //        myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
 //        myBlurImage.setBlur(15);
     }
 
-    /* TODO: explain what the class FileChooser does here
+    /**
+     * class FileChooser
      *
+     * TODO: explain what the class FileChooser does here
      */
     public static class FileChooser {
         private static final String PARENT_DIR = "..";
@@ -95,25 +102,40 @@ public class activity_PetforAdoption extends AppCompatActivity {
         private Dialog dialog;
         private File currentPath;
 
-        // filter on file extension
+        /**
+         * filter on file extension
+         *
+         * @param string
+         */
         private String extension = null;
         public void setExtension(String extension) {
             this.extension = (extension == null) ? null :
                     extension.toLowerCase();
         }
 
-        // file selection event handling
+        /**
+         * file selection event handling
+         */
         public interface FileSelectedListener {
             void fileSelected(File file);
         }
 
-        //TODO: add comment for this function
+        /**
+         * TODO: add comment for this function
+         *
+         * @param fileListener
+         * @return this
+         */
         public FileChooser setFileListener(FileSelectedListener fileListener) {
             this.fileListener = fileListener;
             return this;
         }
 
-        //TODO: add comment for this function
+        /**
+         * TODO: add comment for this function
+         *
+         * @param activity
+         */
         private FileSelectedListener fileListener;
         public FileChooser(Activity activity) {
             this.activity = activity;
@@ -138,7 +160,9 @@ public class activity_PetforAdoption extends AppCompatActivity {
             refresh(Environment.getExternalStorageDirectory());
         }
 
-        //TODO: add comment for this function
+        /**
+         * TODO: add comment for this function
+         */
         public void showDialog() {
             dialog.show();
         }
@@ -186,7 +210,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
                 for (File file : files ) { fileList[i++] = file.getName(); }
 
                 // refresh the user interface
-                //TODO: maybe fix code organization; Android Studio does not like the definition of getView inside setAdapter
+                // TODO: maybe fix code organization; Android Studio does not like the definition of getView inside setAdapter
                 dialog.setTitle(currentPath.getPath());
                 list.setAdapter(new ArrayAdapter(activity,
                         android.R.layout.simple_list_item_1, fileList) {
@@ -212,7 +236,11 @@ public class activity_PetforAdoption extends AppCompatActivity {
         }
     }
 
-    // TODO: explain what this function does here
+    /**
+     * TODO: explain what this function does here
+     *
+     * @param view
+     */
     public void saveNewPetSwipe(View view)
     {
         EditText NameText = findViewById(R.id.NameEdit);

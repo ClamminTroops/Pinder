@@ -13,9 +13,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-/* class for Adopt Pet Activity
- * allows users to see profiles of dogs they can adopt
+/** class for Adopt Pet Activity
+ *
+ * It allows users to see profiles of dogs they can adopt
  *      and like/dislike a dog
+ *
+ * @author Justin Baskaran
+ * @version 2
+ * @since 16-11-2018
  */
 public class activity_adoptPet extends AppCompatActivity {
 
@@ -36,10 +41,15 @@ public class activity_adoptPet extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    /* method for Like Button
+    /**
+     * method for Like Button
+     *
      * creates a toast message saying "Liked!"
-     *      TODO: add dog profile to list of matches for that user
-     *      and swipes to the next dog profile using ImageAdapter
+     * and swipes to the next dog profile using ImageAdapter
+     *
+     * TODO: add dog profile to list of matches for that user
+     *
+     * @param view
      */
     public void likeBtnPressed(View view)
     {
@@ -48,12 +58,15 @@ public class activity_adoptPet extends AppCompatActivity {
 //        Toast.makeText(getApplicationContext(), "Liked!",
 //                Toast.LENGTH_LONG).show();
 //        viewPager.setCurrentItem(+1);
-
     }
 
-    /* method for Dislike Button
+    /**
+     * method for Dislike Button
+     *
      * creates a toast message saying "Disliked!"
-     *      and swipes to the next dog profile using ImageAdapter
+     * and swipes to the next dog profile using ImageAdapter
+     *
+     * @param view
      */
     public void dislikeBtnPressed(View view)
     {
@@ -62,7 +75,9 @@ public class activity_adoptPet extends AppCompatActivity {
         viewPager.setCurrentItem(+1);
     }
 
-    /* class ImageAdapter for handling pet swipes
+    /**
+     * class ImageAdapter for handling pet swipes
+     *
      * used specifically for swiping left or right
      */
     private class ImageAdapter extends PagerAdapter {
@@ -70,7 +85,6 @@ public class activity_adoptPet extends AppCompatActivity {
         private int[] GalImages = new int[] {
                 R.drawable.puppy,
                 R.drawable.puppy2
-
         };
 
         // constructor method for ImageAdapter

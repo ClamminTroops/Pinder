@@ -6,10 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-/* class for Result Activity
+/**
+ * class for Result Activity
+ *
  * shows user the result of the quiz (which is the breed they match
  *      the closest to) and allows the user to begin searching through
  *      dog profiles of that particular breed
+ *
+ * @author Caroline Carlson
+ * @version 2
+ * @since 16-11-2018
  */
 public class ResultActivity extends AppCompatActivity {
 
@@ -23,8 +29,12 @@ public class ResultActivity extends AppCompatActivity {
 
     }
 
-    /* function for Adopt One Button
+    /**
+     * function for Adopt One Button
+     *
      * takes user to Adopt Pet Activity
+     *
+     * @param view
      */
     public void onAdoptOneBtnPressed(View view) {
         Intent adopt = new Intent(ResultActivity.this, activity_adoptPet.class);
