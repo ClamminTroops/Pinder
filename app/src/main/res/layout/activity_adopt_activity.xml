@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,8 +19,8 @@
         android:layout_below="@+id/pictureWindow"
         android:layout_marginBottom="-371dp"
         android:layout_toStartOf="@+id/dislikestheDogcrossbutton"
-        app:srcCompat="@drawable/heart"
-        android:onClick="likeBtnPressed"/>
+        android:onClick="likeBtnPressed"
+        app:srcCompat="@drawable/heart" />
 
     <ImageButton
         android:id="@+id/dislikestheDogcrossbutton"
@@ -30,7 +29,19 @@
         android:layout_below="@+id/pictureWindow"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="76dp"
-        app:srcCompat="@drawable/xout"
-        android:onClick="dislikeBtnPressed"/>
+        android:onClick="dislikeBtnPressed"
+        app:srcCompat="@drawable/xout" />
+
+    <!--This width/height is not a good solution, but we're going for it-->
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bluebutton"
+        android:text="@string/my_matches_btn"
+        android:onClick="onMyMatchesBtnPressed"/>
 
 </RelativeLayout>
