@@ -26,5 +26,9 @@ public class TakeQuiz extends AppCompatActivity {
     public void onDoneBtnPressed (View view) {
         Intent adopt = new Intent(TakeQuiz.this, ResultActivity.class);
         startActivity(adopt);
+        actionBar.setTitle("");
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
+        myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
+        myBlurImage.setBlur(15);
     }
 }

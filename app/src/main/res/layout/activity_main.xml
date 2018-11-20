@@ -8,61 +8,76 @@
     android:background="@drawable/whiteneddog">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/startQuizBtn"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:background="@drawable/bluelogo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mainActivity_quiz"
-            android:onClick="onStartQuizBtnPressed"/>
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="125dp">
 
-        <Button
-            android:id="@+id/petMatchBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onPetMatchBtnPressed"
-            android:text="@string/mainActivity_result_page" />
+            <Button
+                android:id="@+id/startQuizBtn"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:background="@drawable/bluebutton"
+                android:text="@string/mainActivity_quiz"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onStartQuizBtnPressed"
+                />
 
-        <Button
-            android:id="@+id/adoptPetBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onAdoptPetPressed"
-            android:text="@string/mainActivity_adoptPet" />
+            <Button
+                android:id="@+id/adoptPetBtn"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:background="@drawable/bluebutton"
+                android:onClick="onAdoptPetPressed"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/mainActivity_adoptPet"
+                android:layout_marginTop="20dp"
+                />
 
-        <Button
-            android:id="@+id/tempLoginBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onTempLoginBtnPressed"
-            android:text="Temp Login Button" />
+            <Button
+                android:id="@+id/listPetBtn"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:onClick="onListPethBtnPressed"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bluebutton"
+                android:text="@string/mainActivity_listPet"
+                android:layout_marginTop="20dp"
+                />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/listPetBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onListPethBtnPressed"
-            android:text="@string/mainActivity_listPet" />
-
-        <Button
-            android:id="@+id/tempMatchBtn"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:onClick="onMatchBtnPressed"
-            android:text="Temp Match Button" />
-
-
-        <Button
-            android:id="@+id/tempProfileButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temp Profile Button"
-            android:onClick="onProfilePressed"/>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/tempProfileButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bluebutton"
+        android:text="My Profile"
+        android:onClick="onProfilePressed"/>
 
 </RelativeLayout>

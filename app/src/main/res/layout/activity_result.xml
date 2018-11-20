@@ -7,19 +7,11 @@
     android:background="@drawable/bluegradientbackground"
     tools:context="edu.calvin.cs262.teamc.ResultActivity">
 
-    <ImageView
-        android:id="@+id/pinderLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="113dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:srcCompat="@drawable/pinderlogo" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_below="@id/pinderLogo"
         android:orientation="vertical">
 
         <TextView

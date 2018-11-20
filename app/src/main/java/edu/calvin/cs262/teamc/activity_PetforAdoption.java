@@ -43,8 +43,12 @@ public class activity_PetforAdoption extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_put_pet_adoption);
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Pinder Quiz");
+        actionBar.setTitle("");
+
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setTitle("Pinder Quiz");
 
         //set default values to ToggleButton "toggleButton4"
         ToggleButton toggleButton = findViewById(R.id.toggleButton4);
