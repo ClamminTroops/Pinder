@@ -1,11 +1,13 @@
 package edu.calvin.cs262.teamc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -24,9 +26,23 @@ public class MyMatchesActivity extends AppCompatActivity {
         matches[0] = new MatchInfo("Bozo", "Golden", R.drawable.goldenretrver);
         matches[1] = new MatchInfo("Penny", "Beagle", R.drawable.beagle);
 
+        ListView lv = ((ListView) findViewById(R.id.myMatchesLv));
         MatchAdapter adapter = new MatchAdapter(this, R.layout.match_list_item, matches);
-        ((ListView) findViewById(R.id.myMatchesLv)).setAdapter(adapter);
+        lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Intent i = new Intent(getBaseContext(), MatchActivity.class);
+                i.putExtra("name", ((MatchInfo) parent.getItemAtPosition(position)).getName());
+                i.putExtra("imgId", ((MatchInfo) parent.getItemAtPosition(position)).getImgSrc());
+                startActivity(i);
+            }
+        });
+
     }
+
+
 
     private class MatchAdapter extends ArrayAdapter<MatchInfo> {
 

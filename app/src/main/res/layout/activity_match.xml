@@ -8,6 +8,7 @@
     tools:context=".MatchActivity">
 
     <TextView
+        android:id="@+id/matchTextTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -22,6 +23,7 @@
         app:layout_constraintVertical_bias="0.268" />
 
     <TextView
+        android:id="@+id/contactInfoTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -40,7 +42,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="106dp"
-        android:text="georgethedog@gmail.com"
+        android:text="@string/contact_seller"
         tools:layout_editor_absoluteX="91dp"
         tools:layout_editor_absoluteY="364dp"
         android:onClick="ACTION_SEND"/>
@@ -50,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="It's a match!"
+        android:text="@string/it_s_a_match"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
