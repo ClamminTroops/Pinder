@@ -21,6 +21,7 @@
     <string name="name">Name:</string>
     <string name="email">Email</string>
     <string name="location">Location</string>
+    <string name="my_matches_btn">My Matches</string>
     <string name="yesButtonTxt">Yes</string>
     <string name="noButtonTxt">NO</string>
     <string name="takeQuizPromptTxt">Would you like to match with your ideal pet?</string>
@@ -34,4 +35,10 @@
         <item name="mediumanimal">Medium</item>
         <item name="lowanimal">Low</item>
     </string-array>
+    <string name="title_activity_my_matches">MyMatchesActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="contact_seller">Contact Seller</string>
+    <string name="it_s_a_match">It\'s a match!</string>
+    <string name="matched_with">You matched with </string>
+    <string name="dogs_contact_info">\'s Contact Info</string>
 </resources>
