@@ -19,16 +19,16 @@ public class TakeQuiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_quiz);
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Pinder Quiz Main");
+        actionBar.setTitle("");
     }
 
     public void onDoneBtnPressed (View view) {
         Intent adopt = new Intent(TakeQuiz.this, ResultActivity.class);
         startActivity(adopt);
-        actionBar.setTitle("");
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
-        myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
-        myBlurImage.setBlur(15);
+        //actionBar.setTitle("");
+        //myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
+        //myBlurImage.setBlur(15);
     }
 }

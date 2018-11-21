@@ -63,6 +63,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
         tg1.setTextOn("No");
 
         //TODO: explain what this piece of code does
+        /*
         final TextView tv1 = findViewById(R.id.chooseFile);
         tv1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +78,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
                     }
                     }).showDialog();
             }
-        });
+        });*/
 
 
 //        myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
@@ -217,7 +218,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
     {
         EditText NameText = findViewById(R.id.NameEdit);
        // EditText BreedText = findViewById(R.id.BreedText);
-        EditText AgeText = findViewById(R.id.age);
+        EditText breedText = findViewById(R.id.chooseBreed);
 
         if( TextUtils.isEmpty(NameText.getText())){
             NameText.setError( getString(R.string.Name_Required) );
@@ -225,8 +226,8 @@ public class activity_PetforAdoption extends AppCompatActivity {
 //        else if( TextUtils.isEmpty(BreedText.getText())){
 //            BreedText.setError( getString(R.string.Breed_Required) );
 //        }
-        else if( TextUtils.isEmpty(AgeText.getText())){
-            AgeText.setError( getString(R.string.Age_Required) );
+        else if( TextUtils.isEmpty(breedText.getText())){
+            breedText.setError( getString(R.string.Age_Required) );
         }
         else {
             Toast.makeText(getApplicationContext(), "Saved to database!",
