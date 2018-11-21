@@ -46,4 +46,12 @@ public class MainActivity extends AppCompatActivity {
         Intent match = new Intent(MainActivity.this, ProfileActivity.class);
         startActivity(match);
     }
+
+    /* Handler for My Matches Button
+     * Launches MyMatchesActivity
+     */
+    public void onMyMatchesBtnPressed(View view) {
+        Intent i = new Intent(MainActivity.this, MyMatchesActivity.class);
+        startActivity(i);
+    }
 }

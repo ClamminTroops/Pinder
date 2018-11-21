@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /* class for Match Activity
  * allows user to see a potential "match" with a dog they have previously liked
@@ -20,6 +22,15 @@ public class MatchActivity extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
+
+        Intent caller = getIntent();
+        TextView matchTextTv = findViewById(R.id.matchTextTv);
+        TextView contactInfoTv = findViewById(R.id.contactInfoTv);
+        ImageView dogIv = (ImageView) findViewById(R.id.imageView2);
+
+        matchTextTv.setText(getString(R.string.matched_with) + caller.getStringExtra("name") + "!");
+        contactInfoTv.setText(caller.getStringExtra("name") + getString(R.string.dogs_contact_info));
+        dogIv.setImageResource(caller.getIntExtra("imgId", 0));
 
     }
 
