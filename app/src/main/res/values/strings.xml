@@ -22,6 +22,9 @@
     <string name="email">Email</string>
     <string name="location">Location</string>
     <string name="my_matches_btn">My Matches</string>
+    <string name="yesButtonTxt">Yes</string>
+    <string name="noButtonTxt">NO</string>
+    <string name="takeQuizPromptTxt">Would you like to match with your ideal pet?</string>
     <string-array name="energylevels">
         <item name="highenergy">High Energy</item>
         <item name="mediumenergy">Medium Energy</item>
