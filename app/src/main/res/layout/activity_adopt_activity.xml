@@ -9,39 +9,109 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pictureWindow"
+        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
-        android:layout_height="276dp" />
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"/>
 
-    <ImageButton
-        android:id="@+id/likestheDogHeartButton"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pictureWindow"
-        android:layout_marginBottom="-371dp"
-        android:layout_toStartOf="@+id/dislikestheDogcrossbutton"
-        android:onClick="likeBtnPressed"
-        app:srcCompat="@drawable/heart" />
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="110dp"
+            android:orientation="vertical"
+            android:background="@drawable/bluesquare"
+            android:layout_marginTop="10dp">
 
-    <ImageButton
-        android:id="@+id/dislikestheDogcrossbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/pictureWindow"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="76dp"
-        android:onClick="dislikeBtnPressed"
-        app:srcCompat="@drawable/xout" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textSize='25sp'
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/matchName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder"
+                    android:textSize='25sp'
+                    android:layout_marginStart="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/breed"
+                    android:textSize='25sp'
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/matchBreed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder2"
+                    android:textSize='25sp'
+                    android:layout_marginStart="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gender"
+                    android:textSize='25sp'
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/matchGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder3"
+                    android:textSize='25sp'
+                    android:layout_marginStart="15dp"/>
+            </LinearLayout>
 
-    <!--This width/height is not a good solution, but we're going for it-->
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/bluebutton"
-        android:text="@string/my_matches_btn"
-        android:onClick="onMyMatchesBtnPressed"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom|center"
+            android:layout_marginTop="20dp"
+            >
+            <Button
+                android:id="@+id/likestheDogHeartButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="50dp"
+                android:onClick="likeBtnPressed"
+                android:background="@drawable/heart" />
+
+            <Button
+                android:id="@+id/dislikestheDogcrossbutton"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="top"
+                android:layout_marginTop="7.5dp"
+                android:background="@drawable/xout"
+                android:onClick="dislikeBtnPressed"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

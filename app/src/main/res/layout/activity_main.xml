@@ -14,8 +14,8 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="75dp"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
             android:background="@drawable/bluelogo"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp">

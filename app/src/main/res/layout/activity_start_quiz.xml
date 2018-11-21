@@ -8,54 +8,6 @@
     tools:context="edu.calvin.cs262.teamc.StartQuiz">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/takeQuizPromptTxt"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="75dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/yesbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="36dp"
-                android:text="@string/yesButtonTxt"
-                android:textStyle="bold"
-                android:onClick="onYesBtnPressed"/>
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="76dp"
-                android:text="@string/noButtonTxt"
-                android:textStyle="bold"
-                android:onClick="onNoBtnPressed"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-        android:layout_height="match_parent"
-        android:id="@+id/myBlurImage"
-        android:src="@drawable/bluebackground"
-        android:scaleType="fitXY" />
-
-    <LinearLayout
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:orientation="vertical"
@@ -84,17 +36,19 @@
                 style="@android:style/Widget.Button.Inset"
                 android:layout_width="104dp"
                 android:layout_height="wrap_content"
-                android:text="Yes"
+                android:text="@string/yes"
                 android:textStyle="bold"
-                android:layout_marginRight="15dp"/>
+                android:layout_marginRight="15dp"
+                android:onClick="onYesBtnPressed"/>
 
             <Button
                 android:id="@+id/nobutton"
                 style="@android:style/Widget.Button.Inset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No"
-                android:textStyle="bold"/>
+                android:text="@string/no"
+                android:textStyle="bold"
+                android:onClick="onNoBtnPressed"/>
 
         </LinearLayout>
     </LinearLayout>
