@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +9,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp">
+        android:layout_margin="20dp"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,8 +21,8 @@
                 android:id="@+id/directions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Choose the dog characteristics you prefer:"
-                android:textSize="18dp"
+                android:text="@string/directions_text1"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="10dp" />
 
@@ -30,8 +30,8 @@
                 android:id="@+id/question1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1. Size"
-                android:textSize="16dp"
+                android:text="@string/questionOneTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -42,25 +42,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Small (1-25 pounds)" />
+                    android:text="@string/question1A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Medium (26-70 pounds)" />
+                    android:text="@string/question1B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Large (71+ pounds)" />
+                    android:text="@string/question1C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/question2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2. Coat Type "
-                android:textSize="16dp"
+                android:text="@string/questionTwoTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -71,25 +71,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Short, smooth coats" />
+                    android:text="@string/question2A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wiry, coarse coats" />
+                    android:text="@string/question2B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Curly, soft coats" />
+                    android:text="@string/question2C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/question3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3. Activeness "
-                android:textSize="16dp"
+                android:text="@string/questionThreeTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -100,25 +100,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quiet and relaxed" />
+                    android:text="@string/question3A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Playful and curious" />
+                    android:text="@string/question3B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Active and hyper" />
+                    android:text="@string/question3C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/question4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4. Sociability "
-                android:textSize="16dp"
+                android:text="@string/questionFourTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -129,25 +129,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Keeps more to themselves" />
+                    android:text="@string/question4A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Is friendly and interactive" />
+                    android:text="@string/question4B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Begs for attention" />
+                    android:text="@string/question4C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/question5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5. Trainability "
-                android:textSize="16dp"
+                android:text="@string/questionFiveTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -158,25 +158,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Can receive basic training" />
+                    android:text="@string/question5A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Can be trained to do some tricks" />
+                    android:text="@string/question5B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Can be troublesome unless given lots of training" />
+                    android:text="@string/question5C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/question6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6. Shedding"
-                android:textSize="16dp"
+                android:text="@string/questionSixTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -187,25 +187,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Minimal to none" />
+                    android:text="@string/question6A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Some cleaning required" />
+                    android:text="@string/question6B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="It gets everywhere" />
+                    android:text="@string/question6C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/question7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="7. Grooming"
-                android:textSize="16dp"
+                android:text="@string/questionSevenTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -216,25 +216,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Low maintenance" />
+                    android:text="@string/question7A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Average amount" />
+                    android:text="@string/question7B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="High maintenance " />
+                    android:text="@string/question7C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/question8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8. Barking"
-                android:textSize="16dp"
+                android:text="@string/questionEightTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -245,25 +245,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rarely barks at things" />
+                    android:text="@string/question8A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Barks sometimes" />
+                    android:text="@string/question8B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Barks a lot" />
+                    android:text="@string/question8C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/directions2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Concerning your living style:"
-                android:textSize="18dp"
+                android:text="@string/directionsText2"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="20dp"/>
@@ -272,8 +272,8 @@
                 android:id="@+id/question9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9. What kind of home do you live in?"
-                android:textSize="16dp"
+                android:text="@string/questionNineTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -284,25 +284,25 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mobile or apartment" />
+                    android:text="@string/question9A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="House with small yard" />
+                    android:text="@string/question9B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="House with large yard" />
+                    android:text="@string/question9C" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/question10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10. How often will your dog be left at home?"
-                android:textSize="16dp"
+                android:text="@string/questionTenTxt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -313,24 +313,24 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Never; there is always someone home" />
+                    android:text="@string/question10A" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Only during the middle of the day (work hours)" />
+                    android:text="@string/question10B" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fairly often; we’re pretty busy people" />
+                    android:text="@string/question10C" />
             </RadioGroup>
 
             <Button
                 android:id="@+id/doneButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Done"
+                android:text="@string/doneButtonTxt"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:onClick="onDoneBtnPressed"/>
