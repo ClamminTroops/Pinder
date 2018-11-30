@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 /* class for Result Activity
  * shows user the result of the quiz (which is the breed they match
@@ -12,6 +13,8 @@ import android.view.View;
  *      dog profiles of that particular breed
  */
 public class ResultActivity extends AppCompatActivity {
+
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,14 @@ public class ResultActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
 
+        //set textview to the result from the quiz
+        textView = findViewById(R.id.breedName);
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null){
+            String result = bundle.getString("Breed");
+            textView.setText(result);
+        }
     }
 
     /* function for Adopt One Button
