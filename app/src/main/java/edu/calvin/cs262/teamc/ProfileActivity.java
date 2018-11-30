@@ -6,9 +6,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-/* class for Profile Activity
+/** class for Profile Activity
+ *
  * allows user to make and save changes to their profile
  *      and to access their matches (taking them to Match Activity)
+ *
+ * @author Gavin Martin
+ * @version 1
+ * @since 16-11-2018
  */
 public class ProfileActivity extends AppCompatActivity {
 
@@ -21,9 +26,13 @@ public class ProfileActivity extends AppCompatActivity {
         actionBar.setTitle("");
     }
 
-    /* function for Save Changes Button
+    /**
+     * function for Save Changes Button
+     *
      * TODO: saves changes made to profile
-     * returns to Main Activity when pressed
+     * and returns to Main Activity
+     *
+     * @param view
      */
     public void saveChanges(View view) {
         Intent logIn = new Intent(ProfileActivity.this, MainActivity.class);

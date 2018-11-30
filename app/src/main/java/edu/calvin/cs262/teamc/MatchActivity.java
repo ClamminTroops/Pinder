@@ -8,10 +8,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/* class for Match Activity
+/** class for Match Activity
+ *
  * allows user to see a potential "match" with a dog they have previously liked
  *      and provides the means to contact the dog's owner/seller
- * TODO: Provide a list of matches, not just one match (double check with Gavin as to the layout)
+ *
+ * @author Dana Drosdick
+ * @version 2
+ * @since 16-11-2018
  */
 public class MatchActivity extends AppCompatActivity {
 
@@ -34,12 +38,20 @@ public class MatchActivity extends AppCompatActivity {
 
     }
 
-    //TODO: This function should be deleted, since this button is not in activity_match.xml
+    /**
+     * TODO: This function should be deleted, since this button is not in activity_match.xml
+     *
+     * @param view
+     */
     public void onAdoptOneBtnPressed(View view) {
     }
 
-    /* function for Action Send Button
+    /**
+     * function for Action Send Button
+     *
      * pulls up email on user's phone so user can email dog owner/seller
+     *
+     * @param view
      */
     public void ACTION_SEND(View view) {
         Intent intent = new Intent(Intent.ACTION_SEND);
