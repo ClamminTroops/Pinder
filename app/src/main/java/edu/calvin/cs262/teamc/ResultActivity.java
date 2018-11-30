@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * class for Result Activity
@@ -19,6 +20,8 @@ import android.view.View;
  */
 public class ResultActivity extends AppCompatActivity {
 
+    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,14 @@ public class ResultActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
 
+        //set textview to the result from the quiz
+        textView = findViewById(R.id.breedName);
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null){
+            String result = bundle.getString("Breed");
+            textView.setText(result);
+        }
     }
 
     /**
