@@ -1,164 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluegradientbackground"
+    android:background="@drawable/whiteneddog"
     tools:context="edu.calvin.cs262.teamc.activity_PetforAdoption">
-    <!--<com.jgabrielfreitas.core.BlurImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/myBlurImage"-->
-        <!--android:src="@drawable/goldenretrver"-->
-        <!--android:scaleType="fitXY"-->
-        <!--/>-->
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left|top"
-        android:text="Name" />
-
-    <EditText
-        android:id="@+id/NameEdit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName" />
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bluesquare"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="25sp"/>
+            <EditText
+                android:id="@+id/NameEdit"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:background="@color/white"
+                android:textSize="20sp"
+                android:hint="@string/enter_pet_name"
+                android:layout_marginStart="15dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gender"
+                android:textSize="25sp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="@string/togglebutton"
+                android:layout_marginStart="15dp"
+                style="@android:style/Widget.Button.Inset"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/breed"
+                android:textSize="25sp"
+                />
+
+            <EditText
+                android:id="@+id/chooseBreed"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:inputType="textAutoComplete"
+                android:background="@color/white"
+                android:textSize="20sp"
+                android:hint="@string/enter_breed_type"
+                android:layout_marginStart="15dp"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/energy_level"
+                android:textSize="25sp"
+                />
+
+            <Spinner
+                android:id="@+id/energylvl"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:entries="@array/energylevels"
+                style="@android:style/Widget.Button.Inset"
+                android:layout_marginStart="15dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/house_trained"
+                android:textSize="25sp" />
+
+            <ToggleButton
+                android:id="@+id/houseTrained"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="@string/togglebutton"
+                style="@android:style/Widget.Button.Inset"
+                android:layout_marginStart="15dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/size"
+                android:textSize="25sp"/>
+
+            <Spinner
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:entries="@array/size"
+                style="@android:style/Widget.Button.Inset"
+                android:layout_marginStart="15dp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/image_url"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/chooseFile"
+                android:hint="@string/enter_url_of_photo"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:textSize="12sp"
+                android:layout_marginStart="15dp"
+
+                />
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_marginTop="15dp"
+            android:id="@+id/listpet"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:onClick="saveNewPetSwipe"
+            android:text="List this Pet"
+            android:textSize='20sp'
+            android:layout_gravity="center_horizontal|bottom"
+            style="@android:style/Widget.Button.Inset"
+            />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            android:text="Gender"
-            android:textSize="18sp" />
-
-        <ToggleButton
-            android:id="@+id/toggleButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            android:layout_weight="1"
-            android:text="ToggleButton" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Breed" />
-
-        <EditText
-            android:id="@+id/age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textAutoComplete" />
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Energy Level" />
-
-        <Spinner
-            android:id="@+id/energylvl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/energylevels"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            android:text="Gender"
-            android:textSize="18sp" />
-
-        <ToggleButton
-            android:id="@+id/houseTrained"
-            android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            android:layout_weight="1"
-            android:text="ToggleButton" />
-
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Size" />
-
-        <Spinner
-            android:id="@+id/size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/size"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|top"
-            android:text="Images: "
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/chooseFile"
-            android:text="Choose File:  "
-            android:layout_width="wrap_content"
-            android:layout_height="64dp"
-            android:layout_weight="1" />
-
-    </LinearLayout>
-
-
-    <Button
-        android:id="@+id/listpet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="saveNewPetSwipe"
-        android:text="List this Pet" />
-
-
-</TableLayout>
+</RelativeLayout>

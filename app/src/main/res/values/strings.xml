@@ -21,6 +21,25 @@
     <string name="name">Name:</string>
     <string name="email">Email</string>
     <string name="location">Location</string>
+    <string name="my_matches_btn">My Matches</string>
+    <string name="yesButtonTxt">Yes</string>
+    <string name="noButtonTxt">NO</string>
+    <string name="takeQuizPromptTxt">Would you like to match with your ideal pet?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="placeholder">placeholder</string>
+    <string name="placeholder2">placeholder2</string>
+    <string name="placeholder3">placeholder3</string>
+    <string name="gender">Gender</string>
+    <string name="enter_pet_name">enter pet name</string>
+    <string name="house_trained">House Trained:</string>
+    <string name="breed">Breed</string>
+    <string name="enter_breed_type">enter breed type</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="energy_level">Energy Level</string>
+    <string name="size">Size</string>
+    <string name="enter_url_of_photo">Enter URL of Photo</string>
+    <string name="image_url">Image URL:</string>
     <string-array name="energylevels">
         <item name="highenergy">High Energy</item>
         <item name="mediumenergy">Medium Energy</item>
@@ -31,4 +50,10 @@
         <item name="mediumanimal">Medium</item>
         <item name="lowanimal">Low</item>
     </string-array>
+    <string name="title_activity_my_matches">MyMatchesActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="contact_seller">Contact Seller</string>
+    <string name="it_s_a_match">It\'s a match!</string>
+    <string name="matched_with">You matched with </string>
+    <string name="dogs_contact_info">\'s Contact Info</string>
 </resources>

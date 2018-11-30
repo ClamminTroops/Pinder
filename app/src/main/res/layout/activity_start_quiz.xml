@@ -4,14 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/whiteneddog"
     tools:context="edu.calvin.cs262.teamc.StartQuiz">
-
-    <com.jgabrielfreitas.core.BlurImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/myBlurImage"
-        android:src="@drawable/bluebackground"
-        android:scaleType="fitXY" />
 
     <LinearLayout
         android:layout_width="300dp"
@@ -42,19 +36,20 @@
                 style="@android:style/Widget.Button.Inset"
                 android:layout_width="104dp"
                 android:layout_height="wrap_content"
-                android:text="Yes"
+                android:text="@string/yes"
                 android:textStyle="bold"
-                android:layout_marginRight="15dp"/>
+                android:layout_marginRight="15dp"
+                android:onClick="onYesBtnPressed"/>
 
             <Button
                 android:id="@+id/nobutton"
                 style="@android:style/Widget.Button.Inset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No"
-                android:textStyle="bold"/>
+                android:text="@string/no"
+                android:textStyle="bold"
+                android:onClick="onNoBtnPressed"/>
 
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>

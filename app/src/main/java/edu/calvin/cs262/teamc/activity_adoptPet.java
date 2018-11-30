@@ -75,8 +75,19 @@ public class activity_adoptPet extends AppCompatActivity {
         viewPager.setCurrentItem(+1);
     }
 
+
     /**
-     * class ImageAdapter for handling pet swipes
+     * class ImageAdapter for handling pet swipe
+     *
+     * Handler for My Matches Button
+     * Launches MyMatchesActivity
+     */
+    public void onMyMatchesBtnPressed(View view) {
+        Intent i = new Intent(activity_adoptPet.this, MyMatchesActivity.class);
+        startActivity(i);
+    }
+
+    /* class ImageAdapter for handling pet swipes
      *
      * used specifically for swiping left or right
      */

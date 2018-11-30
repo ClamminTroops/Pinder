@@ -28,12 +28,26 @@ public class StartQuiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_quiz);
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
+    }
+
+    //takes user to Take Quiz Activity on pressing button "Yes"
+    public void onYesBtnPressed(View view) {
+        Intent toy = new Intent(StartQuiz.this, TakeQuiz.class);
+        startActivity(toy);
+    }
+
+    //takes user to Main Activity on pressing button "No"
+    public void onNoBtnPressed (View view) {
+        Intent adopt = new Intent(StartQuiz.this, MainActivity.class);
+        startActivity(adopt);
+        //actionBar.setTitle("");
         getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         init();
-        myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
-        myBlurImage.setBlur(15);
+        //myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
+        //myBlurImage.setBlur(15);
     }
 
     /**
