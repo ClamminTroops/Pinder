@@ -15,12 +15,10 @@ import com.jgabrielfreitas.core.BlurImageView;
 /** class for Take Quiz Activity
  *
  * prompts user to answers questions for the quiz
- * TODO: Update questions for the quiz and add new quiz activities as necessary
- * TODO: keep track of user answers to the questions
  *
  * @author Sam Acharya and Caroline Carlson
- * @version 2
- * @since 16-11-2018
+ * @version 4
+ * @since 04-Dec-2018
  */
 public class TakeQuiz extends AppCompatActivity {
 
@@ -126,10 +124,6 @@ public class TakeQuiz extends AppCompatActivity {
         Intent adopt = new Intent(TakeQuiz.this, ResultActivity.class);
         adopt.putExtra("Breed", result);
         startActivity(adopt);
-
-        //actionBar.setTitle("");
-        //myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
-        //myBlurImage.setBlur(15);
     }
 
     /**
