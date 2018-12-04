@@ -189,17 +189,15 @@
                 android:text="@string/image_url"
                 android:textSize="25sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/chooseFile"
                 android:hint="@string/enter_url_of_photo"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/white"
-                android:textSize="12sp"
-                android:layout_marginStart="15dp"
 
-                />
+                android:textSize="12sp"
+                android:layout_marginStart="15dp" />
 
         </LinearLayout>
 

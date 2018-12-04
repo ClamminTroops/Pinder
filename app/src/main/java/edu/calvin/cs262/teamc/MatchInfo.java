@@ -1,16 +1,16 @@
 package edu.calvin.cs262.teamc;
 
 public class MatchInfo {
-    private String name;
-    private String breed;
-    private int imgSrc;
+     String name;
+     String breed;
+     String imgSrc;
 
     public MatchInfo() {
         name = breed = null;
-        imgSrc = 0;
+        imgSrc = "";
     }
 
-    public MatchInfo(String n, String b, int i) {
+    public MatchInfo(String n, String b, String i) {
         name = n;
         breed = b;
         imgSrc = i;
@@ -24,7 +24,7 @@ public class MatchInfo {
         return breed;
     }
 
-    public int getImgSrc() {
+    public String getImgSrc() {
         return imgSrc;
     }
 }
