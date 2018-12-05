@@ -169,43 +169,56 @@ public class activity_PetforAdoption extends AppCompatActivity {
             Log.e("saveNewPetSwipe-imgString",imgString);
 
 
-
-            String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/listpet";
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    Toast.makeText(activity_PetforAdoption.this, "Successful", Toast.LENGTH_SHORT).show();
-
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(activity_PetforAdoption.this, "Failed", Toast.LENGTH_SHORT).show();
-
-                }
-            }){
-
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> postMap = new HashMap<>();
-                    postMap.put("Content-Type","application/json");
-                    postMap.put("name", Name);
-                    postMap.put("gender",Gender);
-                    postMap.put("breed",Breed);
-                    postMap.put("energylevel",Energy);
-                    postMap.put("housetrained",House);
-                    postMap.put("size",Size);
-                    postMap.put("personidAndr", String.valueOf(exampleString));
-                    postMap.put("photo",imgString);
-                    //..... Add as many key value pairs in the map as necessary for your request
-                    return postMap;
-                }
-            };
-            //make the request to your server as indicated in your request url
-            Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
+            if (TextUtils.isEmpty(NameText.getText()))
+            {
+                NameText.setError(getString(R.string.Name_Required));
+            } else if (TextUtils.isEmpty(BreedText.getText()))
+            {
+                BreedText.setError(getString(R.string.Age_Required));
+            }
+            else if (ImageURL.getText().toString().equals(""))
+            {
+                BreedText.setError("No Picture!");
+            }
+            else {
 
 
+                String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/listpet";
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(activity_PetforAdoption.this, "Listed Pet!", Toast.LENGTH_SHORT).show();
 
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //    Toast.makeText(activity_PetforAdoption.this, "Failed", Toast.LENGTH_SHORT).show();
+
+                    }
+                }) {
+
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> postMap = new HashMap<>();
+                        postMap.put("Content-Type", "application/json");
+                        postMap.put("name", Name);
+                        postMap.put("gender", Gender);
+                        postMap.put("breed", Breed);
+                        postMap.put("energylevel", Energy);
+                        postMap.put("housetrained", House);
+                        postMap.put("size", Size);
+                        postMap.put("personidAndr", String.valueOf(exampleString));
+                        postMap.put("photo", imgString);
+                        //..... Add as many key value pairs in the map as necessary for your request
+                        return postMap;
+                    }
+                };
+                //make the request to your server as indicated in your request url
+                Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
+
+
+            }
         }
 
     }

@@ -72,33 +72,37 @@ public class activity_login extends AppCompatActivity {
      * directs the user back to the main screen (Main Activity)
      */
     public void createAccount(View view) {
-        String requestUrl ="https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/player";
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(activity_login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                Intent createAccount = new Intent(activity_login.this,MainActivity.class);
-                createAccount.putExtra("loginID",usernameC.getText().toString());
-                startActivity(createAccount);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-            }
-        }){
+        if (usernameC.getText().toString().length() <= 4  || passwordC.getText().toString().length() <= 4 )
+        {
+            Toast.makeText(activity_login.this, "Too short! Password and Username must be 4 characters in length", Toast.LENGTH_SHORT).show();
+        } else {
+            String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/player";
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Toast.makeText(activity_login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    Intent createAccount = new Intent(activity_login.this, MainActivity.class);
+                    createAccount.putExtra("loginID", usernameC.getText().toString());
+                    startActivity(createAccount);
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                }
+            }) {
 
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> postMap = new HashMap<>();
-                postMap.put("Content-Type","application/json");
-                postMap.put("loginID",usernameC.getText().toString());
-                postMap.put("password",passwordC.getText().toString());
-                return postMap;
-            }
-        };
-        //make the request to your server as indicated in your request url
-        Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
-
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> postMap = new HashMap<>();
+                    postMap.put("Content-Type", "application/json");
+                    postMap.put("loginID", usernameC.getText().toString());
+                    postMap.put("password", passwordC.getText().toString());
+                    return postMap;
+                }
+            };
+            //make the request to your server as indicated in your request url
+            Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
+        }
     }
 
     /* method for Sign Up Button
