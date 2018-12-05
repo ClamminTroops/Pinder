@@ -28,6 +28,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -83,6 +84,19 @@ public class MyMatchesActivity extends AppCompatActivity {
 
                     MatchAdapter adapter = new MatchAdapter(MyMatchesActivity.this, R.layout.match_list_item, matches);
                     lv.setAdapter(adapter);
+
+                    TextView tv1 = findViewById(R.id.matches_background_text);
+                    if (matches.size() == 0)
+                    {
+                        lv.setVisibility(View.GONE);
+                        tv1.setVisibility(View.VISIBLE);
+
+                    } else {
+                        lv.setVisibility(View.VISIBLE);
+                        tv1.setVisibility(View.GONE);
+
+                    }
+
 
 
 
@@ -150,6 +164,10 @@ public class MyMatchesActivity extends AppCompatActivity {
             TextView dogBreedTv = (TextView) rowView.findViewById(R.id.dogBreedTv);
             Log.e("getView-POsition", String.valueOf(position));
             Log.e("getView-Values",String.valueOf(values.get(position).getImgSrc()));
+
+            Log.e("Size", String.valueOf(values.size()));
+
+
 
 
 
