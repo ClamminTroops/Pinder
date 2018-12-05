@@ -16,7 +16,7 @@
     <string name="resultBreedName">Golden Retriever</string>
     <string name="resultButtonText">Adopt One</string>
     <string name="mainActivity_result_page">Result Page</string>
-    <string name="mainActivity_quiz">Quiz</string>
+    <string name="mainActivity_quiz">Take Breed Quiz</string>
     <string name="my_profile">My Profile</string>
     <string name="name">Name:</string>
     <string name="email">Email</string>
@@ -56,7 +56,7 @@
     <string name="it_s_a_match">It\'s a match!</string>
     <string name="matched_with">You matched with </string>
     <string name="dogs_contact_info">\'s Contact Info</string>
-    <string name="directions_text1">Choose the dog characteristics you prefer:</string>
+    <string name="directions_text1">Dog Characteristics:</string>
     <string name="questionOneTxt">1. Size</string>
     <string name="question1ATxt">Small (1—25 pounds)</string>
     <string name="question1BTxt">Medium (26–70 pounds)</string>
@@ -89,16 +89,18 @@
     <string name="question8ATxt">Mobile or apartment</string>
     <string name="question8BTxt">House with small yard</string>
     <string name="question8CTxt">House with large yard</string>
-    <string name="questionNineTxt">9. How often will your dog be left at home?</string>
-    <string name="directionsText2">Concerning your living style:</string>
+    <string name="questionNineTxt">9. When will your dog be left at home?</string>
+    <string name="directionsText2">Your Living Style:</string>
     <string name="question9ATxt">Never; there is always someone home</string>
-    <string name="question9BTxt">Only during the middle of the day (work hours)</string>
+    <string name="question9BTxt">Only during the work hours of the day</string>
     <string name="question9CTxt">Fairly often; we’re pretty busy people</string>
-    <string name="questionTenTxt">10. Do you have other pets at home?</string>
+    <string name="questionTenTxt">10. Do you have other pets?</string>
     <string name="question10ATxt">Yes, at least one</string>
     <string name="question10BTxt">No other pets</string>
-    <string name="doneButtonTxt">Done</string>
-    <string name="questionElevenTxt">11. Do you have young children at home?</string>
+    <string name="doneButtonTxt">Finish</string>
+    <string name="questionElevenTxt">11. Do you have young children?</string>
     <string name="question11ATxt">Yes, at least one</string>
     <string name="question11BTxt">No young children</string>
+    <string name="subDirectionsTxt">Choose your preference for each question. Scroll down as you go.</string>
+    <string name="subDirections2Txt">Choose the appropriate answer for each question. Scroll down as you go.</string>
 </resources>

@@ -23,7 +23,6 @@ import com.jgabrielfreitas.core.BlurImageView;
  */
 public class TakeQuiz extends AppCompatActivity {
 
-    String result;
     Integer spaniel = 0, poodle = 0, pomeranian = 0, labrador = 0, husky = 0;
     Integer goldenRetriever = 0, germanShepherd = 0, collie = 0, bulldog = 0, beagle = 0;
     Boolean question1Checked = false, question2Checked = false, question3Checked = false,
@@ -49,7 +48,7 @@ public class TakeQuiz extends AppCompatActivity {
      *
      * @param view
      */
-    public void onDoneBtnPressed(View view) {
+    public void onFinishBtnPressed(View view) {
 
         if (question1Checked == false) {
             Toast.makeText(TakeQuiz.this, "Question 1 not answered", Toast.LENGTH_LONG).show();

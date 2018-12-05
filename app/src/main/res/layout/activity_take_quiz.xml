@@ -22,7 +22,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/directions_text1"
-                android:textSize="18sp"
+                android:textSize="@dimen/directionsSize"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:id="@+id/directions3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subDirectionsTxt"
+                android:textSize="@dimen/subDirectionsSize"
                 android:textColor="@color/black"
                 android:layout_marginBottom="10dp" />
 
@@ -31,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionOneTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -45,6 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question1ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton1Clicked" />
 
                 <RadioButton
@@ -52,6 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question1BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton1Clicked" />
 
                 <RadioButton
@@ -59,6 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question1CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton1Clicked" />
             </RadioGroup>
 
@@ -67,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionTwoTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -80,6 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question2ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton2Clicked"/>
 
                 <RadioButton
@@ -87,6 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question2BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton2Clicked"/>
 
                 <RadioButton
@@ -94,6 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question2CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton2Clicked"/>
             </RadioGroup>
 
@@ -102,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionThreeTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -115,6 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question3ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton3Clicked"/>
 
                 <RadioButton
@@ -122,6 +139,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question3BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton3Clicked"/>
 
                 <RadioButton
@@ -129,6 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question3CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton3Clicked"/>
             </RadioGroup>
 
@@ -137,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionFourTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -150,6 +169,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question4ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton4Clicked"/>
 
                 <RadioButton
@@ -157,6 +177,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question4BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton4Clicked"/>
 
                 <RadioButton
@@ -164,6 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question4CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton4Clicked"/>
             </RadioGroup>
 
@@ -172,7 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionFiveTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -185,6 +207,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question5ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton5Clicked"/>
 
                 <RadioButton
@@ -192,6 +215,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question5BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton5Clicked"/>
 
                 <RadioButton
@@ -199,6 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question5CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton5Clicked"/>
             </RadioGroup>
 
@@ -207,7 +232,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionSixTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -220,6 +245,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question6ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton6Clicked"/>
 
                 <RadioButton
@@ -227,6 +253,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question6BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton6Clicked"/>
 
                 <RadioButton
@@ -234,6 +261,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question6CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton6Clicked"/>
             </RadioGroup>
 
@@ -242,7 +270,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionSevenTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -255,6 +283,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question7ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton7Clicked"/>
 
                 <RadioButton
@@ -262,6 +291,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question7BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton7Clicked"/>
 
                 <RadioButton
@@ -269,6 +299,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question7CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton7Clicked"/>
             </RadioGroup>
 
@@ -277,17 +308,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/directionsText2"
-                android:textSize="18sp"
+                android:textSize="@dimen/directionsSize"
                 android:textColor="@color/black"
-                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp"
                 android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/subDirections2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subDirections2Txt"
+                android:textSize="@dimen/subDirectionsSize"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp" />
 
             <TextView
                 android:id="@+id/question8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionEightTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -300,6 +341,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question8ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton8Clicked"/>
 
                 <RadioButton
@@ -307,6 +349,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question8BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton8Clicked"/>
 
                 <RadioButton
@@ -314,6 +357,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question8CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton8Clicked"/>
             </RadioGroup>
 
@@ -322,7 +366,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionNineTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -335,6 +379,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question9ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton9Clicked"/>
 
                 <RadioButton
@@ -342,6 +387,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question9BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton9Clicked"/>
 
                 <RadioButton
@@ -349,6 +395,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question9CTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton9Clicked"/>
             </RadioGroup>
 
@@ -357,7 +404,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionTenTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -370,6 +417,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question10ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton10Clicked"/>
 
                 <RadioButton
@@ -377,6 +425,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question10BTxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton10Clicked"/>
 
             </RadioGroup>
@@ -386,7 +435,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/questionElevenTxt"
-                android:textSize="16sp"
+                android:textSize="@dimen/questionSize"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -399,6 +448,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question11ATxt"
+                    android:textSize="@dimen/answerSize"
                     android:onClick="onRadioButton11Clicked"/>
 
                 <RadioButton
@@ -406,7 +456,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/question11BTxt"
-                    android:onClick="onRadioButton11Clicked"/>
+                    android:textSize="@dimen/answerSize"
+                    android:onClick="onRadioButton11Clicked"
+                    android:layout_marginBottom="30dp"/>
 
             </RadioGroup>
 
@@ -417,7 +469,7 @@
                 android:text="@string/doneButtonTxt"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:onClick="onDoneBtnPressed"/>
+                android:onClick="onFinishBtnPressed"/>
         </LinearLayout>
 
     </ScrollView>
