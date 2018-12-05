@@ -352,38 +352,63 @@
                     android:onClick="onRadioButton9Clicked"/>
             </RadioGroup>
 
-            <!--THIS QUESTION STILL NEEDS TO BE IMPLEMENTED-->
-            <!--<TextView-->
-                <!--android:id="@+id/question10"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="@string/questionTenTxt"-->
-                <!--android:textSize="16sp"-->
-                <!--android:textStyle="bold"-->
-                <!--android:textColor="@color/colorPrimaryDark"/>-->
+            <TextView
+                android:id="@+id/question10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/questionTenTxt"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
 
-            <!--<RadioGroup-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content">-->
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                <!--<RadioButton-->
-                    <!--android:id="@+id/question10A"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/question10ATxt" />-->
+                <RadioButton
+                    android:id="@+id/question10A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question10ATxt"
+                    android:onClick="onRadioButton10Clicked"/>
 
-                <!--<RadioButton-->
-                    <!--android:id="@+id/question10B"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/question10BTxt" />-->
+                <RadioButton
+                    android:id="@+id/question10B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question10BTxt"
+                    android:onClick="onRadioButton10Clicked"/>
 
-                <!--<RadioButton-->
-                    <!--android:id="@+id/question10C"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/question10CTxt" />-->
-            <!--</RadioGroup>-->
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/question11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/questionElevenTxt"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/question11A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question11ATxt"
+                    android:onClick="onRadioButton11Clicked"/>
+
+                <RadioButton
+                    android:id="@+id/question11B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question11BTxt"
+                    android:onClick="onRadioButton11Clicked"/>
+
+            </RadioGroup>
 
             <Button
                 android:id="@+id/doneButton"

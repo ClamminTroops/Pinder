@@ -95,8 +95,10 @@
     <string name="question9BTxt">Only during the middle of the day (work hours)</string>
     <string name="question9CTxt">Fairly often; we’re pretty busy people</string>
     <string name="questionTenTxt">10. Do you have other pets at home?</string>
-    <string name="question10ATxt">At least one other dog</string>
-    <string name="question10BTxt">At least one cat</string>
-    <string name="question10CTxt">Other animal</string>
+    <string name="question10ATxt">Yes, at least one</string>
+    <string name="question10BTxt">No other pets</string>
     <string name="doneButtonTxt">Done</string>
+    <string name="questionElevenTxt">11. Do you have young children at home?</string>
+    <string name="question11ATxt">Yes, at least one</string>
+    <string name="question11BTxt">No young children</string>
 </resources>
