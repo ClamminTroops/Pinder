@@ -80,7 +80,7 @@ public class MatchActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(MatchActivity.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
+           //     Toast.makeText(MatchActivity.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObj = new JSONObject(response);
                     JSONArray arrJson = jsonObj.getJSONArray("items");
@@ -103,7 +103,7 @@ public class MatchActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MatchActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+          //      Toast.makeText(MatchActivity.this, "Failed", Toast.LENGTH_SHORT).show();
 
             }
         }){
