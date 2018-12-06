@@ -9,24 +9,26 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jgabrielfreitas.core.BlurImageView;
 
 /** class for Take Quiz Activity
  *
  * prompts user to answers questions for the quiz
- * TODO: Update questions for the quiz and add new quiz activities as necessary
- * TODO: keep track of user answers to the questions
  *
  * @author Sam Acharya and Caroline Carlson
- * @version 2
- * @since 16-11-2018
+ * @version 4
+ * @since 04-Dec-2018
  */
 public class TakeQuiz extends AppCompatActivity {
 
-    String result;
     Integer spaniel = 0, poodle = 0, pomeranian = 0, labrador = 0, husky = 0;
     Integer goldenRetriever = 0, germanShepherd = 0, collie = 0, bulldog = 0, beagle = 0;
+    Boolean question1Checked = false, question2Checked = false, question3Checked = false,
+            question4Checked = false, question5Checked = false, question6Checked = false,
+            question7Checked = false, question8Checked = false, question9Checked = false,
+            question10Checked = false, question11Checked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,42 @@ public class TakeQuiz extends AppCompatActivity {
      *
      * @param view
      */
-    public void onDoneBtnPressed(View view) {
+    public void onFinishBtnPressed(View view) {
+
+        if (question1Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 1 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question2Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 2 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question3Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 3 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question4Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 4 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question5Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 5 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question6Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 6 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question7Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 7 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question8Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 8 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question9Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 9 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question10Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 10 not answered", Toast.LENGTH_LONG).show();
+            return;
+        } if (question11Checked == false) {
+            Toast.makeText(TakeQuiz.this, "Question 11 not answered", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         String bracket1A, bracket1B, bracket1C, bracket1D,
                 bracket1E, bracket2A, bracket2B, result;
@@ -123,13 +160,10 @@ public class TakeQuiz extends AppCompatActivity {
             result = bracket2B;
         }
 
+        //Create Intent for Result Activity
         Intent adopt = new Intent(TakeQuiz.this, ResultActivity.class);
         adopt.putExtra("Breed", result);
         startActivity(adopt);
-
-        //actionBar.setTitle("");
-        //myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
-        //myBlurImage.setBlur(15);
     }
 
     /**
@@ -144,6 +178,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton1Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question1Checked = checked;
 
         switch (view.getId()) {
             case R.id.question1A:
@@ -183,6 +218,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton2Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question2Checked = checked;
 
         switch (view.getId()) {
             case R.id.question2A:
@@ -222,6 +258,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton3Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question3Checked = checked;
 
         switch (view.getId()) {
             case R.id.question3A:
@@ -261,6 +298,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton4Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question4Checked = checked;
 
         switch (view.getId()) {
             case R.id.question4A:
@@ -300,6 +338,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton5Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question5Checked = checked;
 
         switch (view.getId()) {
             case R.id.question5A:
@@ -339,6 +378,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton6Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question6Checked = checked;
 
         switch (view.getId()) {
             case R.id.question6A:
@@ -378,6 +418,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton7Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question7Checked = checked;
 
         switch (view.getId()) {
             case R.id.question7A:
@@ -417,6 +458,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton8Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question8Checked = checked;
 
         switch (view.getId()) {
             case R.id.question8A:
@@ -456,6 +498,7 @@ public class TakeQuiz extends AppCompatActivity {
     public void onRadioButton9Clicked(View view) {
 
         boolean checked = ((RadioButton) view).isChecked();
+        question9Checked = checked;
 
         switch (view.getId()) {
             case R.id.question9A:
@@ -478,6 +521,78 @@ public class TakeQuiz extends AppCompatActivity {
                     germanShepherd += 1;
                     collie += 1;
                     beagle += 1;
+                    break;
+                }
+        }
+    }
+
+    /**
+     * onClick method for Quiz Question 10
+     *
+     * finds which option was selected and adds a point to the matching breeds
+     *
+     * got help from this tutorial youtube video: https://www.youtube.com/watch?v=HMsNpVOM804
+     *
+     * @param view
+     */
+    public void onRadioButton10Clicked(View view) {
+
+        boolean checked = ((RadioButton) view).isChecked();
+        question10Checked = checked;
+
+        switch (view.getId()) {
+            case R.id.question10A:
+                if (checked) {
+                    husky += 1;
+                    bulldog += 1;
+                    break;
+                }
+            case R.id.question10B:
+                if (checked) {
+                    spaniel += 1;
+                    poodle += 1;
+                    pomeranian += 1;
+                    labrador += 1;
+                    goldenRetriever += 1;
+                    germanShepherd += 1;
+                    collie += 1;
+                    beagle += 1;
+                    break;
+                }
+        }
+    }
+
+    /**
+     * onClick method for Quiz Question 11
+     *
+     * finds which option was selected and adds a point to the matching breeds
+     *
+     * got help from this tutorial youtube video: https://www.youtube.com/watch?v=HMsNpVOM804
+     *
+     * @param view
+     */
+    public void onRadioButton11Clicked(View view) {
+
+        boolean checked = ((RadioButton) view).isChecked();
+        question11Checked = checked;
+
+        switch (view.getId()) {
+            case R.id.question11A:
+                if (checked) {
+                    pomeranian += 1;
+                    germanShepherd += 1;
+                    break;
+                }
+            case R.id.question11B:
+                if (checked) {
+                    spaniel += 1;
+                    poodle += 1;
+                    labrador += 1;
+                    husky += 1;
+                    goldenRetriever += 1;
+                    collie += 1;
+                    beagle += 1;
+                    bulldog += 1;
                     break;
                 }
         }

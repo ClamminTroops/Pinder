@@ -14,13 +14,12 @@ import com.jgabrielfreitas.core.BlurImageView;
  *
  * confirms that the user wants to take the quiz
  *
- * @author Sam Acharya and Caroline Carlson
- * @version 2
- * @since 16-11-2018
+ * @author Sam Acharya, Caroline Carlson, and Gavin Martin
+ * @version 4
+ * @since 04-Dec-2018
  */
 public class StartQuiz extends AppCompatActivity {
 
-    BlurImageView myBlurImage;
     public Button yesbutton;
     public Button nobutton;
 
@@ -43,32 +42,5 @@ public class StartQuiz extends AppCompatActivity {
     public void onNoBtnPressed (View view) {
         Intent adopt = new Intent(StartQuiz.this, MainActivity.class);
         startActivity(adopt);
-        //actionBar.setTitle("");
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
-        init();
-        //myBlurImage =  (BlurImageView) findViewById(R.id.myBlurImage);
-        //myBlurImage.setBlur(15);
-    }
-
-    /**
-     * takes user to Take Quiz Activity on pressing button "Yes"
-     */
-    public void init(){
-        yesbutton = (Button)findViewById(R.id.yesbutton);
-        yesbutton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent toy = new Intent(getBaseContext(), TakeQuiz.class);
-                startActivity(toy);
-            }
-        });
-        nobutton = (Button)findViewById(R.id.nobutton);
-        nobutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent toy = new Intent(getBaseContext(), TakeQuiz.class);
-                startActivity(toy);
-            }
-        });
     }
 }
