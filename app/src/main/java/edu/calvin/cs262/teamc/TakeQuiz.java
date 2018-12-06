@@ -164,6 +164,7 @@ public class TakeQuiz extends AppCompatActivity {
         Intent adopt = new Intent(TakeQuiz.this, ResultActivity.class);
         adopt.putExtra("Breed", result);
         startActivity(adopt);
+        finish();
     }
 
     /**
