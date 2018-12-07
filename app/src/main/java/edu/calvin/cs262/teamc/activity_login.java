@@ -80,7 +80,7 @@ public class activity_login extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     Toast.makeText(activity_login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    Intent createAccount = new Intent(activity_login.this, MainActivity.class);
+                    Intent createAccount = new Intent(activity_login.this, ProfileActivity.class);
                     createAccount.putExtra("loginID", usernameC.getText().toString());
                     startActivity(createAccount);
                     finish();

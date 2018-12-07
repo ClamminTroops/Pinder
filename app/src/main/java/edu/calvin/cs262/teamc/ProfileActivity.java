@@ -193,6 +193,18 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    /* Handler for My Matches Button
+     * Launches MyMatchesActivity
+     */
+    public void onMyMatchesBtnPressed(View view) {
+        Integer personID=null;
+
+        Intent i = new Intent(ProfileActivity.this, MyMatchesActivity.class);
+        i.putExtra("loginID",getIntent().getStringExtra("loginID"));
+        Log.e("personID-onMyMatchesbTnPressed", String.valueOf(personID));
+        i.putExtra("personID",personID);
+        startActivity(i);
+    }
 
 
 

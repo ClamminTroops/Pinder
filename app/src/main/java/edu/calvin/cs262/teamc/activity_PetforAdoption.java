@@ -93,10 +93,10 @@ public class activity_PetforAdoption extends AppCompatActivity {
         toggleButton.setTextOn("Male");
 
         //set default values to ToggleButton "houseTrained"
-        ToggleButton tg1 = findViewById(R.id.houseTrained);
-        tg1.setText("No");
-        tg1.setTextOff("Yes");
-        tg1.setTextOn("No");
+      //  ToggleButton tg1 = findViewById(R.id.houseTrained);
+//        tg1.setText("No");
+//        tg1.setTextOff("Yes");
+//        tg1.setTextOn("No");
 
         final FileChooser fileChooser = new FileChooser(activity_PetforAdoption.this);
 
@@ -132,23 +132,15 @@ public class activity_PetforAdoption extends AppCompatActivity {
     public void saveNewPetSwipe (View view) {
         EditText NameText = findViewById(R.id.NameEdit);
         ToggleButton GenderText = findViewById(R.id.toggleButton4);
-        EditText BreedText = findViewById(R.id.chooseBreed);
-        Spinner EnergyLevel = findViewById(R.id.energylvl);
-        ToggleButton HouseTrained = findViewById(R.id.houseTrained);
-        Spinner size = findViewById(R.id.size);
+        Spinner BreedText = findViewById(R.id.chooseBreed);
         TextView ImageURL = findViewById(R.id.chooseFile);
 
         if (TextUtils.isEmpty(NameText.getText())) {
             NameText.setError(getString(R.string.Name_Required));
-        } else if (TextUtils.isEmpty(BreedText.getText())) {
-            BreedText.setError(getString(R.string.Age_Required));
         } else {
             final String Name = NameText.getText().toString();
             final String Gender = GenderText.getText().toString();
-            final String Breed = BreedText.getText().toString();
-            final String Energy = EnergyLevel.getSelectedItem().toString();
-            final String House = HouseTrained.getText().toString();
-            final String Size = size.getSelectedItem().toString();
+            final String Breed = BreedText.getSelectedItem().toString();
             String ImageUrl = ImageURL.getText().toString();
 
 
@@ -163,22 +155,16 @@ public class activity_PetforAdoption extends AppCompatActivity {
             Log.e("saveNewPetSwipe-Name",Name);
             Log.e("saveNewPetSwipe-Gender",Gender);
             Log.e("saveNewPetSwipe-Breed",Breed);
-            Log.e("saveNewPetSwipe-Energy",Energy);
-            Log.e("saveNewPetSwipe-House",House);
-            Log.e("saveNewPetSwipe-Size",Size);
             Log.e("saveNewPetSwipe-imgString",imgString);
 
 
             if (TextUtils.isEmpty(NameText.getText()))
             {
                 NameText.setError(getString(R.string.Name_Required));
-            } else if (TextUtils.isEmpty(BreedText.getText()))
-            {
-                BreedText.setError(getString(R.string.Age_Required));
             }
             else if (ImageURL.getText().toString().equals(""))
             {
-                BreedText.setError("No Picture!");
+
             }
             else {
 
@@ -205,9 +191,6 @@ public class activity_PetforAdoption extends AppCompatActivity {
                         postMap.put("name", Name);
                         postMap.put("gender", Gender);
                         postMap.put("breed", Breed);
-                        postMap.put("energylevel", Energy);
-                        postMap.put("housetrained", House);
-                        postMap.put("size", Size);
                         postMap.put("personidAndr", String.valueOf(exampleString));
                         postMap.put("photo", imgString);
                         //..... Add as many key value pairs in the map as necessary for your request
