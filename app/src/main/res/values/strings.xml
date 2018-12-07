@@ -103,4 +103,6 @@
     <string name="question11BTxt">No young children</string>
     <string name="subDirectionsTxt">Choose your preference for each question. Scroll down as you go.</string>
     <string name="subDirections2Txt">Choose the appropriate answer for each question. Scroll down as you go.</string>
+    <string name="myMatches_noMatches">No matches</string>
+    <string name="myMatches_myMAthces">My Matches:</string>
 </resources>
