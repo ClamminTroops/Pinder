@@ -62,7 +62,7 @@ public class activity_adoptPet extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-               // Toast.makeText(activity_adoptPet.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(activity_adoptPet.this, "Received Information!", Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObj = new JSONObject(response);
                     JSONArray arrJson = jsonObj.getJSONArray("items");
@@ -164,13 +164,13 @@ public class activity_adoptPet extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-               // Toast.makeText(activity_adoptPet.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
+               Toast.makeText(activity_adoptPet.this, "Received Information!", Toast.LENGTH_SHORT).show();
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-             //   Toast.makeText(activity_adoptPet.this, "Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_adoptPet.this, "Failed", Toast.LENGTH_SHORT).show();
 
             }
         }){
