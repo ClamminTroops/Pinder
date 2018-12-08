@@ -79,7 +79,7 @@ public class activity_login extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Toast.makeText(activity_login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(activity_login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     Intent createAccount = new Intent(activity_login.this, MainActivity.class);
                     createAccount.putExtra("loginID", usernameC.getText().toString());
                     startActivity(createAccount);

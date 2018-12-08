@@ -82,7 +82,6 @@ public class ProfileActivity extends AppCompatActivity {
         Drawable myDrawable = getResources().getDrawable(R.drawable.person);
         image.setImageDrawable(myDrawable);
 
-        Log.e("loginID",loginID);
         String requestUrl = String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",loginID);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
