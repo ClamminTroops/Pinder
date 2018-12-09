@@ -119,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(match);
     }
 
-    /* Handler for My Matches Button
+    /**
+     * Handler for My Matches Button
      * Launches MyMatchesActivity
      */
     public void onMyMatchesBtnPressed(View view) {

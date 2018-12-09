@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/whiteneddog"
+    android:background="@drawable/footprints2"
     tools:context="edu.calvin.cs262.teamc.TakeQuiz">
 
     <ScrollView
@@ -468,7 +468,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/doneButtonTxt"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
                 android:onClick="onFinishBtnPressed"/>
         </LinearLayout>
 
