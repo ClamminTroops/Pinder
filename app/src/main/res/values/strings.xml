@@ -50,6 +50,19 @@
         <item name="mediumanimal">Medium</item>
         <item name="lowanimal">Low</item>
     </string-array>
+    <string-array name="breeds">
+        <item name="dalmation">Dalmation</item>
+        <item name="Labrador">Labrador</item>
+        <item name="GoldenRetriever">Golden Retriever</item>
+        <item name="Spaniel">Spaniel</item>
+        <item name="poodle">Poodle</item>
+        <item name="pomeranian">Pomeranian</item>
+        <item name="huskey">Huskey</item>
+        <item name="GermanShepherd">German Shepherd</item>
+        <item name="collie">Collie</item>
+        <item name="bulldog">Bulldog</item>
+        <item name="beagle">Beagle</item>
+    </string-array>
     <string name="title_activity_my_matches">MyMatchesActivity</string>
     <string name="action_settings">Settings</string>
     <string name="contact_seller">Contact Seller</string>
