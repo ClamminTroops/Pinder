@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
@@ -47,14 +48,12 @@ public class MyMatchesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_matches);
         Bundle extras = getIntent().getExtras();
         personID = extras.getInt("personID");
-         lv = ((ListView) findViewById(R.id.myMatchesLv));
+        lv = ((ListView) findViewById(R.id.myMatchesLv));
 
 
+        String requestUrl = String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/matches/%d", personID);
+        Log.d("MyMatches", requestUrl);
 
-
-
-
-        String requestUrl = String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/matches/%d",personID);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -74,9 +73,7 @@ public class MyMatchesActivity extends AppCompatActivity {
                         String Photo =object.getString("profilePicture");
 
                         MatchInfo mi = new MatchInfo(Name,Breed,Photo);
-                       matches.add(mi);
-
-
+                        matches.add(mi);
 
                     }
 
@@ -84,22 +81,14 @@ public class MyMatchesActivity extends AppCompatActivity {
 
                     MatchAdapter adapter = new MatchAdapter(MyMatchesActivity.this, R.layout.match_list_item, matches);
                     lv.setAdapter(adapter);
+                    TextView label = findViewById(R.id.myMatches_labelTv);
 
-                    TextView tv1 = findViewById(R.id.matches_background_text);
                     if (matches.size() == 0)
                     {
-                        lv.setVisibility(View.GONE);
-                        tv1.setVisibility(View.VISIBLE);
-
+                        label.setText(R.string.myMatches_noMatches);
                     } else {
-                        lv.setVisibility(View.VISIBLE);
-                        tv1.setVisibility(View.GONE);
-
+                        label.setText(R.string.myMatches_myMAthces);
                     }
-
-
-
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -144,7 +133,7 @@ public class MyMatchesActivity extends AppCompatActivity {
     private class MatchAdapter extends ArrayAdapter<MatchInfo> {
 
         private  Context context;
-        private  List<MatchInfo> values = new ArrayList<MatchInfo>();
+        private  List<MatchInfo> values;
 
         public MatchAdapter(Context context, int textViewResourceId,
                             List<MatchInfo> objects) {
@@ -157,6 +146,7 @@ public class MyMatchesActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
             View rowView = inflater.inflate(R.layout.match_list_item, parent, false);
 
             ImageView pictureIv = (ImageView) rowView.findViewById(R.id.dogImageIv);
@@ -168,9 +158,6 @@ public class MyMatchesActivity extends AppCompatActivity {
             Log.e("Size", String.valueOf(values.size()));
 
 
-
-
-
             dogNameTv.setText(values.get(position).getName());
             dogBreedTv.setText(values.get(position).getBreed());
 
@@ -178,14 +165,12 @@ public class MyMatchesActivity extends AppCompatActivity {
             Log.e("Image Source ",values.get(position).imgSrc);
 
             String encodedString = values.get(position).imgSrc;
-          //  encodedString = encodedString.replace("data:image/jpeg;base64,","");
+            encodedString = encodedString.replace("data:image/jpeg;base64,","");
             byte[] imageBytes = Base64.decode(encodedString.getBytes(), 0);
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.length);
             pictureIv.setImageBitmap(bitmap);
 
-
-
-
+            Log.d("MyMatches", "I am attempting to return");
             return rowView;
         }
     }

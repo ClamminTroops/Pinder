@@ -62,7 +62,7 @@ public class activity_adoptPet extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-               // Toast.makeText(activity_adoptPet.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(activity_adoptPet.this, "Received Information!", Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObj = new JSONObject(response);
                     JSONArray arrJson = jsonObj.getJSONArray("items");
@@ -90,17 +90,28 @@ public class activity_adoptPet extends AppCompatActivity {
                         dogs.add(dogsitem);
                     }
 
-
                     viewPager = (ViewPager) findViewById(R.id.pictureWindow);
                     adapter = new ImageAdapter(activity_adoptPet.this,dogs);
                     viewPager.setAdapter(adapter);
+                    viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                        public void onPageScrollStateChanged(int state) {
+                        }
 
+                        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                            TextView name = findViewById(R.id.matchName);
+                            TextView breed = findViewById(R.id.matchBreed);
+                            TextView gender = findViewById(R.id.matchGender);
 
+                            name.setText(dogs.get(position).name_string);
+                            breed.setText(dogs.get(position).breed_string);
+                            gender.setText(dogs.get(position).gender_string);
+                        }
 
+                        public void onPageSelected(int position) {
+                        }
+                    });
 
                     Log.e("onResponse-Length", String.valueOf(dogs.size()));
-
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -164,13 +175,13 @@ public class activity_adoptPet extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-               // Toast.makeText(activity_adoptPet.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
+               Toast.makeText(activity_adoptPet.this, "Received Information!", Toast.LENGTH_SHORT).show();
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-             //   Toast.makeText(activity_adoptPet.this, "Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_adoptPet.this, "Failed", Toast.LENGTH_SHORT).show();
 
             }
         }){
@@ -187,15 +198,11 @@ public class activity_adoptPet extends AppCompatActivity {
         //make the request to your server as indicated in your request url
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
 
-
-
-
-
         dogs.remove(index);
         adapter.notifyDataSetChanged();
         viewPager.setAdapter(adapter);
-
-
+        viewPager.setCurrentItem( viewPager.getCurrentItem() == dogs.size() ? 0
+                : viewPager.getCurrentItem() + 1);
 
     }
 
@@ -210,26 +217,8 @@ public class activity_adoptPet extends AppCompatActivity {
     public void dislikeBtnPressed(View view)
     {
 
-
-        Toast.makeText(getApplicationContext(), "Disliked!",
-                Toast.LENGTH_LONG).show();
-        int index = viewPager.getCurrentItem();
-        if (viewPager.getCurrentItem() == dogs.size())
-        {
-
-            viewPager.setCurrentItem(-1);
-        } else if (viewPager.getCurrentItem() == 0)
-        {
-
-            viewPager.setCurrentItem(+1);
-        } else {
-
-            viewPager.setCurrentItem(+1);
-        }
-
-
-
-
+        viewPager.setCurrentItem( viewPager.getCurrentItem() + 1 == dogs.size() ? 0
+                : viewPager.getCurrentItem() + 1);
 
     }
 
@@ -284,14 +273,6 @@ public class activity_adoptPet extends AppCompatActivity {
           //  imageView.setImageResource(GalImages[position]);
 
             ((ViewPager) container).addView(imageView, 0);
-
-            TextView name = findViewById(R.id.matchName);
-            TextView breed = findViewById(R.id.matchBreed);
-            TextView gender = findViewById(R.id.matchGender);
-
-            name.setText(dogs.get(position).name_string);
-            breed.setText(dogs.get(position).breed_string);
-            gender.setText(dogs.get(position).gender_string);
 
             return imageView;
         }

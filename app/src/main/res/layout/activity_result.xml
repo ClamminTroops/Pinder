@@ -1,51 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluegradientbackground"
+    android:background="@drawable/snow"
     tools:context="edu.calvin.cs262.teamc.ResultActivity">
 
+    <TextView
+        android:id="@+id/resultTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/resultTitleText"
+        android:textSize="@dimen/resultTitleSize"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAlignment="center" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/resultTitle"
+        android:layout_margin="10dp"
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/resultTitle"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/resultTitleText"
-            android:textAlignment="center"
-            android:textSize="@dimen/resultTitleSize"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
-        <ImageView
-            android:id="@+id/resultImage"
-            android:layout_width="@dimen/resultImageSize"
-            android:layout_height="@dimen/resultImageSize"
-            android:src="@drawable/goldenretrver"/>
+            <ImageView
+                android:id="@+id/firstImage"
+                android:layout_width="@dimen/resultImageSize"
+                android:layout_height="@dimen/resultImageSize"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/pom"
+                android:contentDescription="@string/firstImageDescription" />
 
-        <TextView
-            android:id="@+id/breedName"
-            android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/firstBreed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resultBreedName"
+                    android:textSize="@dimen/resultSubtitleSize"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/firstPercent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/firstPercentTxt"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"/>
+
+                <ProgressBar
+                    android:id="@+id/firstProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    style="?android:attr/progressBarStyleHorizontal"/>
+
+                <Button
+                    android:id="@+id/firstAdoptButton"
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:text="@string/resultButtonText"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/resultButtonTextSize"
+                    android:background="@color/colorPrimary"
+                    android:onClick="onAdoptOneBtnPressed" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/resultBreedName"
-            android:textAlignment="center"
-            android:textSize="@dimen/resultSubtitleSize" />
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
-         <Button
-            android:id="@+id/adoptButton"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="@string/resultButtonText"
-            android:textSize="@dimen/resultButtonTextSize"
-            android:background="@drawable/bluebutton"
-            android:onClick="onAdoptOneBtnPressed"
-            />
+            <ImageView
+                android:id="@+id/secondImage"
+                android:layout_width="@dimen/resultImageSize"
+                android:layout_height="@dimen/resultImageSize"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/collie"
+                android:contentDescription="@string/secondImageDescription" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/secondBreed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resultBreedName"
+                    android:textSize="@dimen/resultSubtitleSize"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/secondPercent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/secondPercentTxt"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"/>
+
+                <ProgressBar
+                    android:id="@+id/secondProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    style="?android:attr/progressBarStyleHorizontal"/>
+
+                <Button
+                    android:id="@+id/secondAdoptButton"
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:text="@string/resultButtonText"
+                    android:textSize="@dimen/resultButtonTextSize"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:onClick="onAdoptOneBtnPressed" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/thirdImage"
+                android:layout_width="@dimen/resultImageSize"
+                android:layout_height="@dimen/resultImageSize"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/beagle2"
+                android:contentDescription="@string/thirdImageDescription" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/thirdBreed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resultBreedName"
+                    android:textSize="@dimen/resultSubtitleSize"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/thirdPercent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thirdPercentTxt"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"/>
+
+                <ProgressBar
+                    android:id="@+id/thirdProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    style="?android:attr/progressBarStyleHorizontal"/>
+
+                <Button
+                    android:id="@+id/thirdAdoptButton"
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:text="@string/resultButtonText"
+                    android:textSize="@dimen/resultButtonTextSize"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:onClick="onAdoptOneBtnPressed" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

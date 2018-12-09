@@ -12,7 +12,7 @@
     <string name="username">Username</string>
     <string name="create_account">Create Account</string>
     <string name="log_in">Log In</string>
-    <string name="resultTitleText">Your Result:</string>
+    <string name="resultTitleText">Your Top Three Results:</string>
     <string name="resultBreedName">Golden Retriever</string>
     <string name="resultButtonText">Adopt One</string>
     <string name="mainActivity_result_page">Result Page</string>
@@ -116,4 +116,15 @@
     <string name="question11BTxt">No young children</string>
     <string name="subDirectionsTxt">Choose your preference for each question. Scroll down as you go.</string>
     <string name="subDirections2Txt">Choose the appropriate answer for each question. Scroll down as you go.</string>
+
+    <string name="firstImageDescription">First Place Dog Breed</string>
+    <string name="firstPercentTxt">25%</string>
+    <string name="secondImageDescription">Second Place Dog Breed</string>
+    <string name="secondPercentTxt">25%</string>
+    <string name="thirdPercentTxt">25%</string>
+    <string name="thirdImageDescription">Third Place Dog Image</string>
+
+    <string name="myMatches_noMatches">No matches</string>
+    <string name="myMatches_myMAthces">My Matches:</string>
+
 </resources>
