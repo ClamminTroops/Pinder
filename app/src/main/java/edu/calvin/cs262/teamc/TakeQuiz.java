@@ -157,6 +157,7 @@ public class TakeQuiz extends AppCompatActivity {
         adopt.putExtra("bronze", thirdBreed);
         adopt.putExtra("bronzeScore", thirdScore);
         startActivity(adopt);
+        finish();
     }
 
     /**
