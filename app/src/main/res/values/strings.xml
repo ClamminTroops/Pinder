@@ -68,11 +68,11 @@
     <string name="questionThreeTxt">3. Energy</string>
     <string name="question3ATxt">Quiet and relaxed</string>
     <string name="question3BTxt">Playful and curious</string>
-    <string name="question3CTxt">Active and hyper</string>
+    <string name="question3CTxt">Active and adventurous</string>
     <string name="questionFourTxt">4. Sociability</string>
     <string name="question4ATxt">Keeps more to themselves</string>
     <string name="question4BTxt">Is friendly and interactive</string>
-    <string name="question4CTxt">Needs lots of attention</string>
+    <string name="question4CTxt">Loves lots of attention</string>
     <string name="questionFiveTxt">5. Trainability</string>
     <string name="question5ATxt">Can receive basic training</string>
     <string name="question5BTxt">Can be trained to do some tricks</string>

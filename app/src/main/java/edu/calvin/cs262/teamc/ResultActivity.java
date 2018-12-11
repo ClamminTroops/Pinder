@@ -35,15 +35,13 @@ public class ResultActivity extends AppCompatActivity {
 
         if(bundle != null){
 
-            /**
-             * set results for first breed
-             */
+            //set results for first breed
             TextView breed1 = findViewById(R.id.firstBreed);
             String breed = bundle.getString("gold");
             breed1.setText(breed);
 
             ProgressBar progressBar1 = findViewById(R.id.firstProgressBar);
-            Integer percent = bundle.getInt("goldScore");
+            int percent = bundle.getInt("goldScore");
             progressBar1.setProgress(percent);
 
             TextView percent1 = findViewById(R.id.firstPercent);
@@ -51,31 +49,41 @@ public class ResultActivity extends AppCompatActivity {
             percent1.setText(score);
 
             ImageView image1 = findViewById(R.id.firstImage);
-            if (breed.equals("Spaniel")) {
-                image1.setImageResource(R.drawable.spaniel);
-            } else if (breed.equals("Poodle")) {
-                image1.setImageResource(R.drawable.poodle);
-            } else if (breed.equals("Pomeranian")) {
-                image1.setImageResource(R.drawable.pom);
-            } else if (breed.equals("Labrador")) {
-                image1.setImageResource(R.drawable.lab);
-            } else if (breed.equals("Husky")) {
-                image1.setImageResource(R.drawable.husky);
-            } else if (breed.equals("Golden Retriever")) {
-                image1.setImageResource(R.drawable.golden);
-            } else if (breed.equals("German Shepherd")) {
-                image1.setImageResource(R.drawable.german);
-            } else if (breed.equals("Collie")) {
-                image1.setImageResource(R.drawable.collie);
-            } else if (breed.equals("Beagle")) {
-                image1.setImageResource(R.drawable.beagle2);
-            } else if (breed.equals("Bulldog")) {
-                image1.setImageResource(R.drawable.bulldog);
+            assert breed != null;
+            switch (breed) {
+                case "Spaniel":
+                    image1.setImageResource(R.drawable.spaniel);
+                    break;
+                case "Poodle":
+                    image1.setImageResource(R.drawable.poodle);
+                    break;
+                case "Pomeranian":
+                    image1.setImageResource(R.drawable.pom);
+                    break;
+                case "Labrador":
+                    image1.setImageResource(R.drawable.lab);
+                    break;
+                case "Husky":
+                    image1.setImageResource(R.drawable.husky);
+                    break;
+                case "Golden Retriever":
+                    image1.setImageResource(R.drawable.golden);
+                    break;
+                case "German Shepherd":
+                    image1.setImageResource(R.drawable.german);
+                    break;
+                case "Collie":
+                    image1.setImageResource(R.drawable.collie);
+                    break;
+                case "Beagle":
+                    image1.setImageResource(R.drawable.beagle2);
+                    break;
+                case "Bulldog":
+                    image1.setImageResource(R.drawable.bulldog);
+                    break;
             }
 
-            /**
-             * set results for second breed
-             */
+            //set results for second breed
             TextView breed2 = findViewById(R.id.secondBreed);
             breed = bundle.getString("silver");
             breed2.setText(breed);
@@ -89,31 +97,41 @@ public class ResultActivity extends AppCompatActivity {
             percent2.setText(score);
 
             ImageView image2 = findViewById(R.id.secondImage);
-            if (breed.equals("Spaniel")) {
-                image2.setImageResource(R.drawable.spaniel);
-            } else if (breed.equals("Poodle")) {
-                image2.setImageResource(R.drawable.poodle);
-            } else if (breed.equals("Pomeranian")) {
-                image2.setImageResource(R.drawable.pom);
-            } else if (breed.equals("Labrador")) {
-                image2.setImageResource(R.drawable.lab);
-            } else if (breed.equals("Husky")) {
-                image2.setImageResource(R.drawable.husky);
-            } else if (breed.equals("Golden Retriever")) {
-                image2.setImageResource(R.drawable.golden);
-            } else if (breed.equals("German Shepherd")) {
-                image2.setImageResource(R.drawable.german);
-            } else if (breed.equals("Collie")) {
-                image2.setImageResource(R.drawable.collie);
-            } else if (breed.equals("Beagle")) {
-                image2.setImageResource(R.drawable.beagle);
-            } else if (breed.equals("Bulldog")) {
-                image2.setImageResource(R.drawable.bulldog);
+            assert breed != null;
+            switch (breed) {
+                case "Spaniel":
+                    image2.setImageResource(R.drawable.spaniel);
+                    break;
+                case "Poodle":
+                    image2.setImageResource(R.drawable.poodle);
+                    break;
+                case "Pomeranian":
+                    image2.setImageResource(R.drawable.pom);
+                    break;
+                case "Labrador":
+                    image2.setImageResource(R.drawable.lab);
+                    break;
+                case "Husky":
+                    image2.setImageResource(R.drawable.husky);
+                    break;
+                case "Golden Retriever":
+                    image2.setImageResource(R.drawable.golden);
+                    break;
+                case "German Shepherd":
+                    image2.setImageResource(R.drawable.german);
+                    break;
+                case "Collie":
+                    image2.setImageResource(R.drawable.collie);
+                    break;
+                case "Beagle":
+                    image2.setImageResource(R.drawable.beagle2);
+                    break;
+                case "Bulldog":
+                    image2.setImageResource(R.drawable.bulldog);
+                    break;
             }
 
-            /**
-             * set results for third breed
-             */
+            //set results for third breed
             TextView breed3 = findViewById(R.id.thirdBreed);
             breed = bundle.getString("bronze");
             breed3.setText(breed);
@@ -127,26 +145,38 @@ public class ResultActivity extends AppCompatActivity {
             percent3.setText(score);
 
             ImageView image3 = findViewById(R.id.thirdImage);
-            if (breed.equals("Spaniel")) {
-                image3.setImageResource(R.drawable.spaniel);
-            } else if (breed.equals("Poodle")) {
-                image3.setImageResource(R.drawable.poodle);
-            } else if (breed.equals("Pomeranian")) {
-                image3.setImageResource(R.drawable.pom);
-            } else if (breed.equals("Labrador")) {
-                image3.setImageResource(R.drawable.lab);
-            } else if (breed.equals("Husky")) {
-                image3.setImageResource(R.drawable.husky);
-            } else if (breed.equals("Golden Retriever")) {
-                image3.setImageResource(R.drawable.golden);
-            } else if (breed.equals("German Shepherd")) {
-                image3.setImageResource(R.drawable.german);
-            } else if (breed.equals("Collie")) {
-                image3.setImageResource(R.drawable.collie);
-            } else if (breed.equals("Beagle")) {
-                image3.setImageResource(R.drawable.beagle);
-            } else if (breed.equals("Bulldog")) {
-                image3.setImageResource(R.drawable.bulldog);
+            assert breed != null;
+            switch (breed) {
+                case "Spaniel":
+                    image3.setImageResource(R.drawable.spaniel);
+                    break;
+                case "Poodle":
+                    image3.setImageResource(R.drawable.poodle);
+                    break;
+                case "Pomeranian":
+                    image3.setImageResource(R.drawable.pom);
+                    break;
+                case "Labrador":
+                    image3.setImageResource(R.drawable.lab);
+                    break;
+                case "Husky":
+                    image3.setImageResource(R.drawable.husky);
+                    break;
+                case "Golden Retriever":
+                    image3.setImageResource(R.drawable.golden);
+                    break;
+                case "German Shepherd":
+                    image3.setImageResource(R.drawable.german);
+                    break;
+                case "Collie":
+                    image3.setImageResource(R.drawable.collie);
+                    break;
+                case "Beagle":
+                    image3.setImageResource(R.drawable.beagle2);
+                    break;
+                case "Bulldog":
+                    image3.setImageResource(R.drawable.bulldog);
+                    break;
             }
         }
     }
