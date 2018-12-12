@@ -110,6 +110,8 @@ public class activity_login extends AppCompatActivity {
         }
     }
 
+
+
     /* method for Sign Up Button
      * TODO: logs in the user with the inputted username and password
      * TODO: rejects the username is the username does not exist

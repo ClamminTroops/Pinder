@@ -53,9 +53,8 @@ public class activity_adoptPet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adopt_activity);
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
+        getSupportActionBar().hide();
+
 
         String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/adoptaPet";
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
@@ -130,6 +129,20 @@ public class activity_adoptPet extends AppCompatActivity {
             }
         };
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
+    }
+
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent(activity_adoptPet.this, MainActivity.class);
+        startActivity(home);
     }
 
     /**

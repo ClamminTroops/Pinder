@@ -72,9 +72,12 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_my_profile);
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
+//        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setTitle("");
+        getSupportActionBar().hide();
+
+
 
         name = findViewById(R.id.name_profile);
         email = findViewById(R.id.email_profile);
@@ -254,5 +257,18 @@ public class ProfileActivity extends AppCompatActivity {
         };
         //make the request to your server as indicated in your request url
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
+    }
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent(ProfileActivity.this, MainActivity.class);
+        startActivity(home);
     }
 }

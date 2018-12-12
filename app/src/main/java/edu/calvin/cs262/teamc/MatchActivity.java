@@ -141,4 +141,18 @@ public class MatchActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(intent, ""));
 
     }
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent(MatchActivity.this, MainActivity.class);
+        startActivity(home);
+    }
+
 }

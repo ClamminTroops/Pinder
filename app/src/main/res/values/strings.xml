@@ -127,5 +127,7 @@
 
     <string name="myMatches_noMatches">No matches</string>
     <string name="myMatches_myMAthces">My Matches:</string>
+    <string name="home">Home</string>
+    <string name="help">Help</string>
 
 </resources>

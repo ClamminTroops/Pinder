@@ -27,9 +27,9 @@ public class StartQuiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_quiz);
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
+        getSupportActionBar().hide();
+
+
     }
 
     //takes user to Take Quiz Activity on pressing button "Yes"
@@ -43,4 +43,19 @@ public class StartQuiz extends AppCompatActivity {
         Intent adopt = new Intent(StartQuiz.this, MainActivity.class);
         startActivity(adopt);
     }
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent(StartQuiz.this, MainActivity.class);
+        startActivity(home);
+    }
+
+
 }

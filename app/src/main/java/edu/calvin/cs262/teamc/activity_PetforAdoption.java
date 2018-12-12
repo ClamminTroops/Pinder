@@ -82,9 +82,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         exampleString = extras.getInt("personID");
 
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
+        getSupportActionBar().hide();
 
 
         ToggleButton toggleButton = findViewById(R.id.toggleButton4);
@@ -142,6 +140,19 @@ public class activity_PetforAdoption extends AppCompatActivity {
         }
     }
 
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent(activity_PetforAdoption.this, MainActivity.class);
+        startActivity(home);
+    }
 
 
     public void saveNewPetSwipe (View view) {

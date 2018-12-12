@@ -38,9 +38,8 @@ public class TakeQuiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_quiz);
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
+        getSupportActionBar().hide();
+
         breeds.put("Spaniel",0);
         breeds.put("Poodle",0);
         breeds.put("Pomeranian",0);
@@ -439,6 +438,21 @@ public class TakeQuiz extends AppCompatActivity {
                 }
         }
     }
+
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent( TakeQuiz.this, MainActivity.class);
+        startActivity(home);
+    }
+
 
     /**
      * onClick method for Quiz Question 8
