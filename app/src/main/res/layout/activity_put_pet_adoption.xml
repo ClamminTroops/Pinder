@@ -14,31 +14,37 @@
         android:background="@drawable/pinderlogov2"
         android:orientation="horizontal" >
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="start"
-                android:text="@string/home"
-                android:layout_marginEnd="250dp"
-                android:layout_marginTop="20dp"
-                style="@android:style/Widget.Button.Inset"
-                android:onClick="goHome"/>
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/houseicon"
+                android:onClick="goHome"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintHorizontal_bias="0.029"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:id="@+id/button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="end"
-                style="@android:style/Widget.Button.Inset"
-                android:text="@string/help"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/question"
                 android:onClick="getHelp"
-                />
-        </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
     <LinearLayout

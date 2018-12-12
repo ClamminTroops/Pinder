@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     public void onMyMatchesBtnPressed(View view) {
         Intent i = new Intent(MainActivity.this, MyMatchesActivity.class);
 
-        i.putExtra("loginID",getIntent().getStringExtra("loginID"));
+        i.putExtra("personID", personID);
 
         startActivity(i);
     }
