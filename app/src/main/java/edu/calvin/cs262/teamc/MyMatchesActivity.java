@@ -49,7 +49,6 @@ public class MyMatchesActivity extends AppCompatActivity {
     List<MatchInfo> matches= new ArrayList<MatchInfo>();
     ListView lv;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -163,7 +162,6 @@ public class MyMatchesActivity extends AppCompatActivity {
 
             dogNameTv.setText(values.get(position).getName());
             dogBreedTv.setText(values.get(position).getBreed());
-
 
             ImageView pictureIv = (ImageView) rowView.findViewById(R.id.dogImageIv);
 

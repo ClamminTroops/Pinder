@@ -57,7 +57,6 @@ public class activity_adoptPet extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
 
-
         String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/adoptaPet";
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 requestUrl, new Response.Listener<String>() {
@@ -77,7 +76,6 @@ public class activity_adoptPet extends AppCompatActivity {
                         String breed = object.getString("breed");
                         Log.e("GetDogs-ProfilePhoto",object.getString("gender"));
                         String gender = object.getString("gender");
-
 
                         Dogs dogsitem = new Dogs();
                         dogsitem.dogid = Integer.parseInt(object.getString("dogID"));
@@ -121,7 +119,6 @@ public class activity_adoptPet extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
             }
         }){
 
@@ -133,7 +130,6 @@ public class activity_adoptPet extends AppCompatActivity {
             }
         };
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
-
     }
 
     /**
@@ -226,7 +222,6 @@ public class activity_adoptPet extends AppCompatActivity {
     private class ImageAdapter extends PagerAdapter {
         Context context;
         List<Dogs> dogs;
-
 
         // constructor method for ImageAdapter
         ImageAdapter(Context context,List<Dogs> listofDogs){

@@ -99,19 +99,16 @@ public class ProfileActivity extends AppCompatActivity {
                     name.setText(object.getString("name"));
                     email.setText(object.getString("email"));
                     location.setText(object.getString("location"));
-                    if (!object.getString("profilePhoto").equals(null))
-                    {
+                    if (!object.getString("profilePhoto").equals(null)) {
 
-                    String encodedString = object.getString("profilePhoto");
-                    encodedString = encodedString
-                            .replace("data:image/jpeg;base64,","");
-                    byte[] imageBytes = Base64.decode(encodedString.getBytes(), 0);
-                     currentDefault = BitmapFactory.decodeByteArray(
-                             imageBytes,0,imageBytes.length);
-                    image.setImageBitmap(currentDefault);
-
-                     }
-
+                        String encodedString = object.getString("profilePhoto");
+                        encodedString = encodedString
+                                .replace("data:image/jpeg;base64,", "");
+                        byte[] imageBytes = Base64.decode(encodedString.getBytes(), 0);
+                        currentDefault = BitmapFactory.decodeByteArray(
+                                imageBytes, 0, imageBytes.length);
+                        image.setImageBitmap(currentDefault);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -181,7 +178,6 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
-
     @Override
     public void onRequestPermissionsResult(
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -192,7 +188,6 @@ public class ProfileActivity extends AppCompatActivity {
                         Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
             }
-
         }
     }
 
@@ -210,8 +205,6 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-
-
     /**
      * function for Save Changes Button
      *
@@ -225,7 +218,6 @@ public class ProfileActivity extends AppCompatActivity {
         final String emails = email.getText().toString();
         final String locations = location.getText().toString();
 
-
         image.buildDrawingCache();
         Bitmap bm = image.getDrawingCache();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -233,7 +225,6 @@ public class ProfileActivity extends AppCompatActivity {
         byte[] byteFormat = stream.toByteArray();
         final String imgString = Base64.encodeToString(byteFormat, Base64.NO_WRAP);
         final String imgStringnew = imgString.substring(imgString.indexOf(",")+1);
-
 
         String requestUrl = String.format(
                 "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/player/%s",loginID);
@@ -263,6 +254,5 @@ public class ProfileActivity extends AppCompatActivity {
         };
         //make the request to your server as indicated in your request url
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
-
     }
 }

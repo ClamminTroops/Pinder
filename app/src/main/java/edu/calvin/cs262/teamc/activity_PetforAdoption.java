@@ -38,7 +38,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.jgabrielfreitas.core.BlurImageView;
 import com.obsez.android.lib.filechooser.ChooserDialog;
 
 import org.json.JSONException;
@@ -112,23 +111,19 @@ public class activity_PetforAdoption extends AppCompatActivity {
                 finalFileChooser.setFileListener(new FileChooser.FileSelectedListener() {
                     @Override
                     public void fileSelected(final File file) {
-// Here, thisActivity is the current activity
-
-                        imageURL = file;
-                        String filename = file.getAbsolutePath();
-                        ImageURL.setText(imageURL.getAbsolutePath());
-                        Log.i("File Name", filename);
-                        // then actually do something in another module
-
+                    // Here, thisActivity is the current activity
+                    imageURL = file;
+                    String filename = file.getAbsolutePath();
+                    ImageURL.setText(imageURL.getAbsolutePath());
+                    Log.i("File Name", filename);
+                    // then actually do something in another module
                     }
                 });
                 // Set up and filter my extension I am looking for
                 //fileChooser.setExtension("pdf");
                 finalFileChooser.showDialog();
-
             }
         });
-
     }
 
     public  boolean isStoragePermissionGranted() {
@@ -181,7 +176,6 @@ public class activity_PetforAdoption extends AppCompatActivity {
 
             }
             else {
-
                 String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/listpet";
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
                     @Override
@@ -212,13 +206,10 @@ public class activity_PetforAdoption extends AppCompatActivity {
                 };
                 //make the request to your server as indicated in your request url
                 Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
-
             }
         }
 
     }
-
-
 }
 
 

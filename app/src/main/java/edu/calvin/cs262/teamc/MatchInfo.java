@@ -4,7 +4,7 @@ package edu.calvin.cs262.teamc;
  *
  * Contains information on matches
  *
- * @author Andrw Thomas
+ * @author Andrew Thomas
  */
 public class MatchInfo {
      String name;
