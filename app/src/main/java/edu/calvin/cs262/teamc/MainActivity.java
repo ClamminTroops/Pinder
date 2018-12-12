@@ -43,17 +43,21 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         // get loginID
-        String requestUrl = String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",getIntent().getStringExtra("loginID"));
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
+        String requestUrl =
+                String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",
+                        getIntent().getStringExtra("loginID"));
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                requestUrl, new Response.Listener<String>() {
+
             @Override
             public void onResponse(String response) {
-            //    Toast.makeText(MainActivity.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObj = new JSONObject(response);
                     JSONArray arrJson = jsonObj.getJSONArray("items");
-                    Log.e("JSON object",arrJson.toString());
                     JSONObject object = arrJson.getJSONObject(0);
                     personID = Integer.parseInt(object.getString("personID"));
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -61,9 +65,8 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-          //      Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-
             }
+
         }){
 
             @Override
@@ -75,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         };
         //make the request to your server as indicated in your request url
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
-
 
     }
 
@@ -125,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void onMyMatchesBtnPressed(View view) {
         Intent i = new Intent(MainActivity.this, MyMatchesActivity.class);
+
         i.putExtra("loginID",getIntent().getStringExtra("loginID"));
-        Log.e("personID-onMyMatchesbTnPressed", String.valueOf(personID));
-        i.putExtra("personID",personID);
+
         startActivity(i);
     }
 }

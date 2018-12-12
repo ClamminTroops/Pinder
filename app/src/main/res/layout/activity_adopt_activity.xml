@@ -7,6 +7,11 @@
     android:background="@drawable/bluegradientbackground"
     tools:context=".activity_adoptPet">
 
+
+
+
+
+
     <android.support.v4.view.ViewPager
         android:id="@+id/pictureWindow"
         android:layout_centerHorizontal="true"
@@ -14,6 +19,38 @@
         android:layout_height="250dp"
         android:layout_marginTop="10dp"
         android:padding="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/home"
+                android:layout_marginEnd="250dp"
+                android:layout_marginTop="20dp"
+                style="@android:style/Widget.Button.Inset"
+                android:onClick="goHome"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="end"
+                style="@android:style/Widget.Button.Inset"
+                android:text="@string/help"
+                android:onClick="getHelp"
+                />
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -114,4 +151,13 @@
         </LinearLayout>
     </LinearLayout>
 
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bluebutton"
+        android:text="@string/my_matches_btn"
+        android:onClick="onMyMatchesBtnPressed"/>
 </RelativeLayout>

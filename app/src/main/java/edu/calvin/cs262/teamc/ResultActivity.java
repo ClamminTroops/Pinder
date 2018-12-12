@@ -182,6 +182,34 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent(ResultActivity.this, MainActivity.class);
+        startActivity(home);
+    }
+
+
+    /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(ResultActivity.this, Help.class);
+        startActivity(home);
+    }
+
+
+    /**
      * function for Adopt One Button
      *
      * takes user to Adopt Pet Activity

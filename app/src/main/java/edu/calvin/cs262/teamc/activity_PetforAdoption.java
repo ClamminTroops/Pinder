@@ -1,12 +1,17 @@
 package edu.calvin.cs262.teamc;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,7 +38,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.jgabrielfreitas.core.BlurImageView;
 import com.obsez.android.lib.filechooser.ChooserDialog;
 
 import org.json.JSONException;
@@ -66,7 +70,6 @@ import java.util.concurrent.ExecutionException;
  */
 public class activity_PetforAdoption extends AppCompatActivity {
 
-    BlurImageView myBlurImage;
     public Button yesbutton;
     File imageURL = null ;
     Integer exampleString;
@@ -77,14 +80,9 @@ public class activity_PetforAdoption extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_put_pet_adoption);
         Bundle extras = getIntent().getExtras();
-         exampleString = extras.getInt("personID");
+        exampleString = extras.getInt("personID");
 
-
-        Log.e("personID", String.valueOf(exampleString));
-
-        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
+        getSupportActionBar().hide();
 
 
         ToggleButton toggleButton = findViewById(R.id.toggleButton4);
@@ -92,66 +90,102 @@ public class activity_PetforAdoption extends AppCompatActivity {
         toggleButton.setTextOff("Female");
         toggleButton.setTextOn("Male");
 
-        //set default values to ToggleButton "houseTrained"
-        ToggleButton tg1 = findViewById(R.id.houseTrained);
-        tg1.setText("No");
-        tg1.setTextOff("Yes");
-        tg1.setTextOn("No");
 
-        final FileChooser fileChooser = new FileChooser(activity_PetforAdoption.this);
+
+        FileChooser fileChooser = null;
+        if (isStoragePermissionGranted())
+        {
+            fileChooser = new FileChooser(activity_PetforAdoption.this);
+        }
+
 
 
         final TextView ImageURL = findViewById(R.id.chooseFile);
+
+        final FileChooser finalFileChooser = fileChooser;
         ImageURL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fileChooser.setFileListener(new FileChooser.FileSelectedListener() {
+                finalFileChooser.setFileListener(new FileChooser.FileSelectedListener() {
                     @Override
                     public void fileSelected(final File file) {
-
-
-                        imageURL = file;
-                        String filename = file.getAbsolutePath();
-                        ImageURL.setText(imageURL.getAbsolutePath());
-                        Log.i("File Name", filename);
-                        // then actually do something in another module
-
+                    // Here, thisActivity is the current activity
+                    imageURL = file;
+                    String filename = file.getAbsolutePath();
+                    ImageURL.setText(imageURL.getAbsolutePath());
+                    Log.i("File Name", filename);
+                    // then actually do something in another module
                     }
                 });
                 // Set up and filter my extension I am looking for
                 //fileChooser.setExtension("pdf");
-                fileChooser.showDialog();
-
+                finalFileChooser.showDialog();
             }
         });
-
-
-
     }
+
+    public  boolean isStoragePermissionGranted() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                return true;
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                return false;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            return true;
+        }
+    }
+
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent(activity_PetforAdoption.this, MainActivity.class);
+        startActivity(home);
+    }
+
+
+    /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(activity_PetforAdoption.this, Help.class);
+        startActivity(home);
+    }
+
+
 
     public void saveNewPetSwipe (View view) {
         EditText NameText = findViewById(R.id.NameEdit);
         ToggleButton GenderText = findViewById(R.id.toggleButton4);
-        EditText BreedText = findViewById(R.id.chooseBreed);
-        Spinner EnergyLevel = findViewById(R.id.energylvl);
-        ToggleButton HouseTrained = findViewById(R.id.houseTrained);
-        Spinner size = findViewById(R.id.size);
+        Spinner BreedText = findViewById(R.id.chooseBreed);
         TextView ImageURL = findViewById(R.id.chooseFile);
 
         if (TextUtils.isEmpty(NameText.getText())) {
+
             NameText.setError(getString(R.string.Name_Required));
-        } else if (TextUtils.isEmpty(BreedText.getText())) {
-            BreedText.setError(getString(R.string.Age_Required));
+
         } else {
+
             final String Name = NameText.getText().toString();
             final String Gender = GenderText.getText().toString();
-            final String Breed = BreedText.getText().toString();
-            final String Energy = EnergyLevel.getSelectedItem().toString();
-            final String House = HouseTrained.getText().toString();
-            final String Size = size.getSelectedItem().toString();
+            final String Breed = BreedText.getSelectedItem().toString();
             String ImageUrl = ImageURL.getText().toString();
-
-
 
             Bitmap bm = BitmapFactory.decodeFile(imageURL.getAbsolutePath());
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -159,30 +193,15 @@ public class activity_PetforAdoption extends AppCompatActivity {
             byte[] byteFormat = stream.toByteArray();
             final String imgString = Base64.encodeToString(byteFormat, Base64.NO_WRAP);
 
-
-            Log.e("saveNewPetSwipe-Name",Name);
-            Log.e("saveNewPetSwipe-Gender",Gender);
-            Log.e("saveNewPetSwipe-Breed",Breed);
-            Log.e("saveNewPetSwipe-Energy",Energy);
-            Log.e("saveNewPetSwipe-House",House);
-            Log.e("saveNewPetSwipe-Size",Size);
-            Log.e("saveNewPetSwipe-imgString",imgString);
-
-
             if (TextUtils.isEmpty(NameText.getText()))
             {
                 NameText.setError(getString(R.string.Name_Required));
-            } else if (TextUtils.isEmpty(BreedText.getText()))
-            {
-                BreedText.setError(getString(R.string.Age_Required));
             }
             else if (ImageURL.getText().toString().equals(""))
             {
-                BreedText.setError("No Picture!");
+
             }
             else {
-
-
                 String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/listpet";
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
                     @Override
@@ -205,9 +224,6 @@ public class activity_PetforAdoption extends AppCompatActivity {
                         postMap.put("name", Name);
                         postMap.put("gender", Gender);
                         postMap.put("breed", Breed);
-                        postMap.put("energylevel", Energy);
-                        postMap.put("housetrained", House);
-                        postMap.put("size", Size);
                         postMap.put("personidAndr", String.valueOf(exampleString));
                         postMap.put("photo", imgString);
                         //..... Add as many key value pairs in the map as necessary for your request
@@ -216,14 +232,10 @@ public class activity_PetforAdoption extends AppCompatActivity {
                 };
                 //make the request to your server as indicated in your request url
                 Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
-
-
             }
         }
 
     }
-
-
 }
 
 

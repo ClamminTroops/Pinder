@@ -76,11 +76,15 @@ public class MatchActivity extends AppCompatActivity {
 
 
 
-        String requestUrl = String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",getIntent().getStringExtra("loginID"));
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
+        String requestUrl =
+                String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",
+                        getIntent().getStringExtra("loginID"));
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET, requestUrl, new Response.Listener<String>() {
+
             @Override
             public void onResponse(String response) {
-           //     Toast.makeText(MatchActivity.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObj = new JSONObject(response);
                     JSONArray arrJson = jsonObj.getJSONArray("items");
@@ -94,8 +98,6 @@ public class MatchActivity extends AppCompatActivity {
                     Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.length);
                     owner.setImageBitmap(bitmap);
 
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -103,7 +105,6 @@ public class MatchActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-          //      Toast.makeText(MatchActivity.this, "Failed", Toast.LENGTH_SHORT).show();
 
             }
         }){
@@ -119,17 +120,6 @@ public class MatchActivity extends AppCompatActivity {
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
 
 
-
-
-
-    }
-
-    /**
-     * TODO: This function should be deleted, since this button is not in activity_match.xml
-     *
-     * @param view
-     */
-    public void onAdoptOneBtnPressed(View view) {
     }
 
     /**
@@ -141,14 +131,43 @@ public class MatchActivity extends AppCompatActivity {
      */
     public void ACTION_SEND(View view) {
 
-
-
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("plain/text");
+
         intent.putExtra(Intent.EXTRA_EMAIL, new String[] { email[0] });
         intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
         intent.putExtra(Intent.EXTRA_TEXT, "mail body");
+
         startActivity(Intent.createChooser(intent, ""));
 
     }
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent(MatchActivity.this, MainActivity.class);
+        startActivity(home);
+    }
+
+
+    /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(MatchActivity.this, Help.class);
+        startActivity(home);
+    }
+
+
 }

@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.calvin.cs262.teamc.MyMatchesActivity">
-
+    android:background="@drawable/bluegradientbackground"
+    tools:context="edu.calvin.cs262.teamc.Help">
 
     <LinearLayout
         android:id="@+id/actionBar"
@@ -27,33 +27,12 @@
                 android:layout_marginTop="20dp"
                 style="@android:style/Widget.Button.Inset"
                 android:onClick="goHome"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="end"
-                style="@android:style/Widget.Button.Inset"
-                android:text="@string/help"
-                android:onClick="getHelp"
-                />
         </LinearLayout>
+
+
     </LinearLayout>
 
 
-    <TextView
-        android:layout_below="@id/actionBar"
-        android:id="@+id/myMatches_labelTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        />
-    <ListView
-        android:id="@+id/myMatchesLv"
-        android:layout_below="@+id/myMatches_labelTv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </ListView>
+
 </RelativeLayout>

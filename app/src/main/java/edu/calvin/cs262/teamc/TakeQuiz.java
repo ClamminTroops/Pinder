@@ -48,9 +48,13 @@ public class TakeQuiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_quiz);
+
         getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
+        getSupportActionBar().hide();
+
+
     }
 
     /**
@@ -447,6 +451,35 @@ public class TakeQuiz extends AppCompatActivity {
                 }
         }
     }
+
+
+    /**
+     * method for returning home
+     *
+     * This takes the user to the home screen activity
+     *
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent home = new Intent( TakeQuiz.this, MainActivity.class);
+        startActivity(home);
+    }
+
+
+    /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(TakeQuiz.this, Help.class);
+        startActivity(home);
+    }
+
 
     /**
      * onClick method for Quiz Question 8
