@@ -44,13 +44,16 @@ public class FileChooser {
     private FileSelectedListener fileListener;
 
     public FileChooser(Activity activity) {
+
         this.activity = activity;
         dialog = new Dialog(activity);
         list = new ListView(activity);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override public void onItemClick(AdapterView<?> parent, View view, int which, long id) {
+
                 String fileChosen = (String) list.getItemAtPosition(which);
                 File chosenFile = getChosenFile(fileChosen);
+
                 if (chosenFile.isDirectory()) {
                     refresh(chosenFile);
                 } else {
@@ -82,6 +85,7 @@ public class FileChooser {
                     return (file.isDirectory() && file.canRead());
                 }
             });
+
             File[] files = path.listFiles(new FileFilter() {
                 @Override public boolean accept(File file) {
                     if (!file.isDirectory()) {
@@ -109,6 +113,7 @@ public class FileChooser {
             }
             Arrays.sort(dirs);
             Arrays.sort(files);
+            
             for (File dir : dirs) { fileList[i++] = dir.getName(); }
             for (File file : files ) { fileList[i++] = file.getName(); }
 

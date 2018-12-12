@@ -62,6 +62,7 @@
         <item name="collie">Collie</item>
         <item name="bulldog">Bulldog</item>
         <item name="beagle">Beagle</item>
+        <item name="other">Other</item>
     </string-array>
     <string name="title_activity_my_matches">MyMatchesActivity</string>
     <string name="action_settings">Settings</string>

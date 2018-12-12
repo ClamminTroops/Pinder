@@ -1,5 +1,11 @@
 package edu.calvin.cs262.teamc;
 
+/** MatchInfo
+ *
+ * Contains information on matches
+ *
+ * @author Andrew Thomas
+ */
 public class MatchInfo {
      String name;
      String breed;

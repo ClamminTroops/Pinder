@@ -38,7 +38,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.jgabrielfreitas.core.BlurImageView;
 import com.obsez.android.lib.filechooser.ChooserDialog;
 
 import org.json.JSONException;
@@ -71,7 +70,6 @@ import java.util.concurrent.ExecutionException;
  */
 public class activity_PetforAdoption extends AppCompatActivity {
 
-    BlurImageView myBlurImage;
     public Button yesbutton;
     File imageURL = null ;
     Integer exampleString;
@@ -83,9 +81,6 @@ public class activity_PetforAdoption extends AppCompatActivity {
         setContentView(R.layout.activity_put_pet_adoption);
         Bundle extras = getIntent().getExtras();
         exampleString = extras.getInt("personID");
-
-
-        Log.e("personID", String.valueOf(exampleString));
 
         getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         ActionBar actionBar = getSupportActionBar();
@@ -116,45 +111,33 @@ public class activity_PetforAdoption extends AppCompatActivity {
                 finalFileChooser.setFileListener(new FileChooser.FileSelectedListener() {
                     @Override
                     public void fileSelected(final File file) {
-// Here, thisActivity is the current activity
-
-
-
-
-                        imageURL = file;
-                        String filename = file.getAbsolutePath();
-                        ImageURL.setText(imageURL.getAbsolutePath());
-                        Log.i("File Name", filename);
-                        // then actually do something in another module
-
+                    // Here, thisActivity is the current activity
+                    imageURL = file;
+                    String filename = file.getAbsolutePath();
+                    ImageURL.setText(imageURL.getAbsolutePath());
+                    Log.i("File Name", filename);
+                    // then actually do something in another module
                     }
                 });
                 // Set up and filter my extension I am looking for
                 //fileChooser.setExtension("pdf");
                 finalFileChooser.showDialog();
-
             }
         });
-
-
-
     }
 
     public  boolean isStoragePermissionGranted() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_GRANTED) {
-                Log.v("Permission","Permission is granted");
                 return true;
             } else {
-
-                Log.v("Permission","Permission is revoked");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
                 return false;
             }
         }
         else { //permission is automatically granted on sdk<23 upon installation
-            Log.v("Permission","Permission is granted");
             return true;
         }
     }
@@ -168,27 +151,21 @@ public class activity_PetforAdoption extends AppCompatActivity {
         TextView ImageURL = findViewById(R.id.chooseFile);
 
         if (TextUtils.isEmpty(NameText.getText())) {
+
             NameText.setError(getString(R.string.Name_Required));
+
         } else {
+
             final String Name = NameText.getText().toString();
             final String Gender = GenderText.getText().toString();
             final String Breed = BreedText.getSelectedItem().toString();
             String ImageUrl = ImageURL.getText().toString();
-
-
 
             Bitmap bm = BitmapFactory.decodeFile(imageURL.getAbsolutePath());
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bm.compress(Bitmap.CompressFormat.JPEG, 80, stream);
             byte[] byteFormat = stream.toByteArray();
             final String imgString = Base64.encodeToString(byteFormat, Base64.NO_WRAP);
-
-
-            Log.e("saveNewPetSwipe-Name",Name);
-            Log.e("saveNewPetSwipe-Gender",Gender);
-            Log.e("saveNewPetSwipe-Breed",Breed);
-            Log.e("saveNewPetSwipe-imgString",imgString);
-
 
             if (TextUtils.isEmpty(NameText.getText()))
             {
@@ -199,8 +176,6 @@ public class activity_PetforAdoption extends AppCompatActivity {
 
             }
             else {
-
-
                 String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/listpet";
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
                     @Override
@@ -231,14 +206,10 @@ public class activity_PetforAdoption extends AppCompatActivity {
                 };
                 //make the request to your server as indicated in your request url
                 Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
-
-
             }
         }
 
     }
-
-
 }
 
 
