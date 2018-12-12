@@ -188,7 +188,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(activity_PetforAdoption.this, "Listed Pet!", Toast.LENGTH_SHORT).show();
-
+                        finish();
                     }
                 }, new Response.ErrorListener() {
                     @Override

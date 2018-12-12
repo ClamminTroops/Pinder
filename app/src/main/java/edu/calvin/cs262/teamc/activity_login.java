@@ -67,23 +67,23 @@ public class activity_login extends AppCompatActivity {
     }
 
     /* method for Sign Up Button
-     * TODO: creates a new user account with the inputted username and password
      * TODO: rejects the username if already exists and allows user to re-enter
      * directs the user back to the main screen (Main Activity)
      */
     public void createAccount(View view) {
-        if (usernameC.getText().toString().length() <= 4  || passwordC.getText().toString().length() <= 4 )
+        if (usernameC.getText().toString().length() < 4  || passwordC.getText().toString().length() < 4 )
         {
-            Toast.makeText(activity_login.this, "Too short! Password and Username must be 4 characters in length", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity_login.this, "Too short! Password and Username must be at least 4 characters in length", Toast.LENGTH_SHORT).show();
         } else {
             String requestUrl = "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/player";
             StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Toast.makeText(activity_login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(activity_login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     Intent createAccount = new Intent(activity_login.this, MainActivity.class);
                     createAccount.putExtra("loginID", usernameC.getText().toString());
                     startActivity(createAccount);
+                    finish();
                 }
             }, new Response.ErrorListener() {
                 @Override
@@ -132,6 +132,7 @@ public class activity_login extends AppCompatActivity {
                     {
                         logIn.putExtra("loginID",usernameL.getText().toString());
                         startActivity(logIn);
+                        finish();
                     }
 
                 } catch (JSONException e) {
