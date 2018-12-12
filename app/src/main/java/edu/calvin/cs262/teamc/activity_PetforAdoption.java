@@ -155,6 +155,21 @@ public class activity_PetforAdoption extends AppCompatActivity {
     }
 
 
+    /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(activity_PetforAdoption.this, Help.class);
+        startActivity(home);
+    }
+
+
+
     public void saveNewPetSwipe (View view) {
         EditText NameText = findViewById(R.id.NameEdit);
         ToggleButton GenderText = findViewById(R.id.toggleButton4);

@@ -271,4 +271,19 @@ public class ProfileActivity extends AppCompatActivity {
         Intent home = new Intent(ProfileActivity.this, MainActivity.class);
         startActivity(home);
     }
+
+
+    /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(ProfileActivity.this, Help.class);
+        startActivity(home);
+    }
+
 }

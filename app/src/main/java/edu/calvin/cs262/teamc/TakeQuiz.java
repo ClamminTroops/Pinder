@@ -455,6 +455,20 @@ public class TakeQuiz extends AppCompatActivity {
 
 
     /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(TakeQuiz.this, Help.class);
+        startActivity(home);
+    }
+
+
+    /**
      * onClick method for Quiz Question 8
      *
      * finds which option was selected and adds a point to the matching breeds

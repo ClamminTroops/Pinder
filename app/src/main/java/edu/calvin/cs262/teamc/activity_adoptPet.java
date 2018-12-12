@@ -145,6 +145,8 @@ public class activity_adoptPet extends AppCompatActivity {
         startActivity(home);
     }
 
+
+
     /**
      * method for Like Button
      *
@@ -226,6 +228,19 @@ public class activity_adoptPet extends AppCompatActivity {
         Intent i = new Intent(activity_adoptPet.this, MyMatchesActivity.class);
         i.putExtra("personID", personID);
         startActivity(i);
+    }
+
+    /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(activity_adoptPet.this, Help.class);
+        startActivity(home);
     }
 
     /* class ImageAdapter for handling pet swipes

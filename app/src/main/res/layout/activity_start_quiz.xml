@@ -37,6 +37,7 @@
                 android:layout_gravity="end"
                 style="@android:style/Widget.Button.Inset"
                 android:text="@string/help"
+                android:onClick="getHelp"
                 />
         </LinearLayout>
     </LinearLayout>

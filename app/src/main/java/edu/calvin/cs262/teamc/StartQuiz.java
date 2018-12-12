@@ -58,4 +58,18 @@ public class StartQuiz extends AppCompatActivity {
     }
 
 
+    /**
+     * method for viewing help screen
+     *
+     * This takes the user to the Help screen activity
+     *
+     *
+     * @param view
+     */
+    public void getHelp(View view) {
+        Intent home = new Intent(StartQuiz.this, Help.class);
+        startActivity(home);
+    }
+
+
 }
