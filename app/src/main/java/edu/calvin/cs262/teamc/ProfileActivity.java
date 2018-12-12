@@ -70,23 +70,27 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_my_profile);
         getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
+
         name = findViewById(R.id.name_profile);
         email = findViewById(R.id.email_profile);
         location= findViewById(R.id.location_profile);
         image = findViewById(R.id.photo_profile);
         loginID = getIntent().getStringExtra("loginID");
+
         Drawable myDrawable = getResources().getDrawable(R.drawable.person);
         image.setImageDrawable(myDrawable);
 
-        String requestUrl = String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",loginID);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
+        String requestUrl = String.format(
+                "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",loginID);
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-             //   Toast.makeText(ProfileActivity.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObj = new JSONObject(response);
                     JSONArray arrJson = jsonObj.getJSONArray("items");
@@ -99,23 +103,23 @@ public class ProfileActivity extends AppCompatActivity {
                     {
 
                     String encodedString = object.getString("profilePhoto");
-                    encodedString = encodedString.replace("data:image/jpeg;base64,","");
+                    encodedString = encodedString
+                            .replace("data:image/jpeg;base64,","");
                     byte[] imageBytes = Base64.decode(encodedString.getBytes(), 0);
-                     currentDefault = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.length);
+                     currentDefault = BitmapFactory.decodeByteArray(
+                             imageBytes,0,imageBytes.length);
                     image.setImageBitmap(currentDefault);
 
-
-                       }
+                     }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
+
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-             //   Toast.makeText(ProfileActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-
             }
         }){
 
@@ -143,8 +147,10 @@ public class ProfileActivity extends AppCompatActivity {
                     StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
                     StrictMode.setVmPolicy(builder.build());
 
-                    Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    File root = new File(Environment.getExternalStorageDirectory(), "Pictures");
+                    Intent cameraIntent = new Intent(
+                            android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    File root = new File(
+                            Environment.getExternalStorageDirectory(), "Pictures");
                     String time = "profile.jpeg";
 
                      gpxfile = new File(root, time);
@@ -177,16 +183,14 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(
+            int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == MY_CAMERA_PERMISSION_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
                 Intent cameraIntent = new
                         Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
-            } else {
-                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
             }
 
         }
@@ -202,6 +206,7 @@ public class ProfileActivity extends AppCompatActivity {
         i.putExtra("loginID",getIntent().getStringExtra("loginID"));
         Log.e("personID-onMyMatchesbTnPressed", String.valueOf(personID));
         i.putExtra("personID",personID);
+
         startActivity(i);
     }
 
@@ -230,18 +235,16 @@ public class ProfileActivity extends AppCompatActivity {
         final String imgStringnew = imgString.substring(imgString.indexOf(",")+1);
 
 
-        String requestUrl = String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/player/%s",loginID);
-        StringRequest stringRequest = new StringRequest(Request.Method.PUT, requestUrl, new Response.Listener<String>() {
+        String requestUrl = String.format(
+                "https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/player/%s",loginID);
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.PUT, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(ProfileActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ProfileActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-
             }
         }){
 
@@ -261,9 +264,5 @@ public class ProfileActivity extends AppCompatActivity {
         //make the request to your server as indicated in your request url
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
 
-
-
     }
-
-
 }
