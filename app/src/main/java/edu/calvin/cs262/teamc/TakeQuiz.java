@@ -21,8 +21,18 @@ import java.lang.*;
  */
 public class TakeQuiz extends AppCompatActivity {
 
-    HashMap<String,Integer> breeds = new HashMap<>();
-    Boolean question1Checked = false,
+    int spaniel = 10,
+            poodle = 11,
+            pomeranian = 12,
+            labrador = 13,
+            husky = 14,
+            goldenRetriever = 15,
+            germanShepherd = 16,
+            collie = 17,
+            bulldog = 18,
+            beagle = 19;
+
+    boolean question1Checked = false,
             question2Checked = false,
             question3Checked = false,
             question4Checked = false,
@@ -38,46 +48,45 @@ public class TakeQuiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_quiz);
+
+        getSupportActionBar().setBackgroundDrawable(getDrawable(R.drawable.pinderlogov2));
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("");
         getSupportActionBar().hide();
 
-        breeds.put("Spaniel",0);
-        breeds.put("Poodle",0);
-        breeds.put("Pomeranian",0);
-        breeds.put("Labrador",0);
-        breeds.put("Husky",0);
-        breeds.put("Golden Retriever",0);
-        breeds.put("German Shepherd",0);
-        breeds.put("Collie",0);
-        breeds.put("Bulldog",0);
-        breeds.put("Beagle",0);
+
     }
 
     /**
-     * function to sort HashMap by values
+     * Determines the breed from the breed's unique number identifier
      *
-     * taken from: https://www.geeksforgeeks.org/sorting-a-hashmap-according-to-values/
+     * @param difference double
+     * @return breed String
      */
-    public static HashMap<String, Integer> sortByValue (HashMap<String, Integer> hm) {
-
-        // Create a list from elements of HashMap
-        List<Map.Entry<String, Integer> > list = new LinkedList<>(hm.entrySet());
-
-        // Sort the list in ascending order
-        Collections.sort(list, new Comparator<Map.Entry<String, Integer> >() {
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-                return (o1.getValue()).compareTo(o2.getValue());
-            }
-        });
-
-        // Reverse list in descending order
-        Collections.reverse(list);
-
-        // put data from sorted list into LinkedHashMap
-        HashMap<String, Integer> temp = new LinkedHashMap<>();
-        for (Map.Entry<String, Integer> aa : list) {
-            temp.put(aa.getKey(), aa.getValue());
+    public String determineBreed (int difference) {
+        String breed = "";
+        if (difference == 10) {
+            breed = "Spaniel";
+        } else if (difference == 11) {
+            breed = "Poodle";
+        } else if (difference == 12) {
+            breed = "Pomeranian";
+        } else if (difference == 13) {
+            breed = "Labrador";
+        } else if (difference == 14) {
+            breed = "Husky";
+        } else if (difference == 15) {
+            breed = "Golden Retriever";
+        } else if (difference == 16) {
+            breed = "German Shepherd";
+        } else if (difference == 17) {
+            breed = "Collie";
+        } else if (difference == 18) {
+            breed = "Bulldog";
+        } else if (difference == 19) {
+            breed = "Beagle";
         }
-        return temp;
+        return breed;
     }
 
     /**
@@ -87,7 +96,7 @@ public class TakeQuiz extends AppCompatActivity {
      * The points are compared in a tournament style with brackets.
      * Lastly, the result activity opens with the result information.
      *
-     * @param view
+     * @param view View
      */
     public void onFinishBtnPressed(View view) {
 
@@ -127,25 +136,29 @@ public class TakeQuiz extends AppCompatActivity {
             return;
         }
 
-        // Sort scores in a LinkedHashMap
-        HashMap<String, Integer> breedsSorted = sortByValue(breeds);
+        // Create an array for the scores
+        int[] intArray = new int[] {spaniel, poodle, pomeranian, labrador, husky,
+                                goldenRetriever, germanShepherd, collie, bulldog, beagle};
+        // Sort array in descending order
+        Arrays.sort(intArray);
 
-        // Get first entry
-        Map.Entry<String, Integer> mapEntry = breedsSorted.entrySet().iterator().next();
-        String firstBreed = mapEntry.getKey();
-        Integer firstScore = mapEntry.getValue() * 100 / 11;
-        breedsSorted.remove(firstBreed);
+        // determine breed and score for the first entry in the array;
+        int entry1 = intArray[9];
+        int breedIdentifier1 = entry1 % 100;
+        String firstBreed = determineBreed(breedIdentifier1);
+        int firstScore = (entry1 - breedIdentifier1) / 11;
 
-        // Get second entry
-        mapEntry = breedsSorted.entrySet().iterator().next();
-        String secondBreed = mapEntry.getKey();
-        Integer secondScore = mapEntry.getValue() * 100 / 11;
-        breedsSorted.remove(secondBreed);
+        // determine breed and score for the first entry in the array;
+        int entry2 = intArray[8];
+        int breedIdentifier2 = entry2 % 100;
+        String secondBreed = determineBreed(breedIdentifier2);
+        int secondScore = (entry2 - breedIdentifier2) / 11;
 
-        // Get third entry
-        mapEntry = breedsSorted.entrySet().iterator().next();
-        String thirdBreed = mapEntry.getKey();
-        Integer thirdScore = mapEntry.getValue() * 100 / 11;
+        // determine breed and score for the first entry in the array;
+        int entry3 = intArray[7];
+        int breedIdentifier3 = entry3 % 100;
+        String thirdBreed = determineBreed(breedIdentifier3);
+        int thirdScore = (entry3 - breedIdentifier3) / 11;
 
         // Create Intent for Result Activity
         Intent adopt = new Intent(TakeQuiz.this, ResultActivity.class);
@@ -176,24 +189,24 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question1A:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    spaniel += 100;
+                    pomeranian += 100;
+                    beagle += 100;
                     break;
                 }
             case R.id.question1B:
                 if (checked) {
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
+                    poodle += 100;
+                    labrador += 100;
+                    husky += 100;
+                    goldenRetriever += 100;
+                    collie += 100;
+                    bulldog += 100;
                     break;
                 }
             case R.id.question1C:
                 if (checked) {
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
+                    germanShepherd += 100;
                     break;
                 }
         }
@@ -216,24 +229,24 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question2A:
                 if (checked) {
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    bulldog += 100;
+                    beagle += 100;
                     break;
                 }
             case R.id.question2B:
                 if (checked) {
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
+                    pomeranian += 100;
+                    labrador += 100;
+                    husky += 100;
+                    goldenRetriever += 100;
+                    germanShepherd += 100;
                     break;
                 }
             case R.id.question2C:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
+                    spaniel += 100;
+                    poodle += 100;
+                    collie += 100;
                     break;
                 }
         }
@@ -256,24 +269,24 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question3A:
                 if (checked) {
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
+                    bulldog += 100;
                     break;
                 }
             case R.id.question3B:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
+                    spaniel += 100;
+                    poodle += 100;
+                    pomeranian += 100;
+                    collie += 100;
                     break;
                 }
             case R.id.question3C:
                 if (checked) {
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    labrador += 100;
+                    husky += 100;
+                    goldenRetriever += 100;
+                    germanShepherd += 100;
+                    beagle += 100;
                     break;
                 }
         }
@@ -300,20 +313,20 @@ public class TakeQuiz extends AppCompatActivity {
                 }
             case R.id.question4B:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
+                    spaniel += 100;
+                    poodle += 100;
+                    pomeranian += 100;
+                    husky += 100;
                     break;
                 }
             case R.id.question4C:
                 if (checked) {
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    labrador += 100;
+                    goldenRetriever += 100;
+                    germanShepherd += 100;
+                    collie += 100;
+                    bulldog += 100;
+                    beagle += 100;
                     break;
                 }
         }
@@ -336,24 +349,24 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question5A:
                 if (checked) {
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
+                    poodle += 100;
+                    pomeranian += 100;
+                    husky += 100;
                     break;
                 }
             case R.id.question5B:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
+                    spaniel += 100;
+                    labrador += 100;
+                    goldenRetriever += 100;
+                    germanShepherd += 100;
                     break;
                 }
             case R.id.question5C:
                 if (checked) {
-                    breeds.put("Collie", breeds.get("Collie") + 1);
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    collie += 100;
+                    bulldog += 100;
+                    beagle += 100;
                     break;
                 }
         }
@@ -376,24 +389,24 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question6A:
                 if (checked) {
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
+                    poodle += 100;
                     break;
                 }
             case R.id.question6B:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    spaniel += 100;
+                    husky += 100;
+                    bulldog += 100;
+                    beagle += 100;
                     break;
                 }
             case R.id.question6C:
                 if (checked) {
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
+                    pomeranian += 100;
+                    labrador += 100;
+                    goldenRetriever += 100;
+                    germanShepherd += 100;
+                    collie += 100;
                     break;
                 }
         }
@@ -416,24 +429,24 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question7A:
                 if (checked) {
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
+                    poodle += 100;
                     break;
                 }
             case R.id.question7B:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
+                    spaniel += 100;
+                    goldenRetriever += 100;
                     break;
                 }
             case R.id.question7C:
                 if (checked) {
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    pomeranian += 100;
+                    labrador += 100;
+                    husky += 100;
+                    germanShepherd += 100;
+                    collie += 100;
+                    bulldog += 100;
+                    beagle += 100;
                     break;
                 }
         }
@@ -485,24 +498,24 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question8A:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    spaniel += 100;
+                    poodle += 100;
+                    bulldog += 100;
                     break;
                 }
             case R.id.question8B:
                 if (checked) {
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
+                    pomeranian += 100;
+                    goldenRetriever += 100;
+                    germanShepherd += 100;
+                    collie += 100;
+                    beagle += 100;
                     break;
                 }
             case R.id.question8C:
                 if (checked) {
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
+                    labrador += 100;
+                    husky += 100;
                     break;
                 }
         }
@@ -525,24 +538,24 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question9A:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
+                    spaniel += 100;
+                    poodle += 100;
+                    pomeranian += 100;
+                    husky += 100;
+                    goldenRetriever += 100;
+                    germanShepherd += 100;
+                    beagle += 100;
                     break;
                 }
             case R.id.question9B:
                 if (checked) {
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
+                    labrador += 100;
+                    collie += 100;
                     break;
                 }
             case R.id.question9C:
                 if (checked) {
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    bulldog += 100;
                     break;
                 }
         }
@@ -565,20 +578,20 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question10A:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
+                    spaniel += 100;
+                    poodle += 100;
+                    pomeranian += 100;
+                    labrador += 100;
+                    goldenRetriever += 100;
+                    germanShepherd += 100;
+                    collie += 100;
+                    beagle += 100;
                     break;
                 }
             case R.id.question10B:
                 if (checked) {
-                    breeds.put("Husky", breeds.get("Husky") + 1);
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
+                    husky += 100;
+                    bulldog += 100;
                     break;
                 }
         }
@@ -601,20 +614,20 @@ public class TakeQuiz extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.question11A:
                 if (checked) {
-                    breeds.put("Spaniel", breeds.get("Spaniel") + 1);
-                    breeds.put("Poodle", breeds.get("Poodle") + 1);
-                    breeds.put("Labrador", breeds.get("Labrador") + 1);
-                    breeds.put("Husky", breeds.get("Husky") + 1);
-                    breeds.put("Golden Retriever", breeds.get("Golden Retriever") + 1);
-                    breeds.put("Collie", breeds.get("Collie") + 1);
-                    breeds.put("Beagle", breeds.get("Beagle") + 1);
-                    breeds.put("Bulldog", breeds.get("Bulldog") + 1);
+                    spaniel += 100;
+                    poodle += 100;
+                    labrador += 100;
+                    husky += 100;
+                    goldenRetriever += 100;
+                    collie += 100;
+                    beagle += 100;
+                    bulldog += 100;
                     break;
                 }
             case R.id.question11B:
                 if (checked) {
-                    breeds.put("Pomeranian", breeds.get("Pomeranian") + 1);
-                    breeds.put("German Shepherd", breeds.get("German Shepherd") + 1);
+                    pomeranian += 100;
+                    germanShepherd += 100;
                     break;
                 }
         }
