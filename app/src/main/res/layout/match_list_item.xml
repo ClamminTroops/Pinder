@@ -8,8 +8,9 @@
 
     <ImageView
         android:id="@+id/dogImageIv"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_margin="10dp"
+        android:layout_width="70dp"
+        android:layout_height="85dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -24,13 +25,14 @@
             android:layout_centerVertical="true"
             android:layout_marginBottom="15dp"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/dogBreedTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dogNameTv" />
+            android:layout_below="@+id/dogNameTv"/>
     </RelativeLayout>
 
 </RelativeLayout>

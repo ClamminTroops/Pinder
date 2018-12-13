@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/footprints2"
+    android:background="@drawable/puppy4"
     tools:context="edu.calvin.cs262.teamc.StartQuiz">
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,51 +44,61 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="140dp"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="250dp"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="8dp"
-            android:text="Would you like to match with your ideal pet?"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"/>
+        android:layout_centerInParent="true"
+        android:background="@drawable/bluesquare"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_width="300dp"
+            android:layout_height="140dp"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
 
-            <Button
-                android:id="@+id/yesbutton"
-                style="@android:style/Widget.Button.Inset"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="250dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="Would you like to match with your ideal pet?"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/yes"
-                android:textStyle="bold"
-                android:layout_marginRight="15dp"
-                android:onClick="onYesBtnPressed"/>
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
-            <Button
-                android:id="@+id/nobutton"
-                style="@android:style/Widget.Button.Inset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/no"
-                android:textStyle="bold"
-                android:onClick="onNoBtnPressed"/>
+                <Button
+                    android:id="@+id/yesbutton"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textStyle="bold"
+                    android:layout_marginRight="15dp"
+                    android:onClick="onYesBtnPressed"/>
+
+                <Button
+                    android:id="@+id/nobutton"
+                    style="@android:style/Widget.Button.Inset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no"
+                    android:textStyle="bold"
+                    android:onClick="onNoBtnPressed"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

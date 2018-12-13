@@ -10,7 +10,7 @@
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="@drawable/pinderlogov2"
+        android:background="@drawable/pinderlogov3"
         android:orientation="horizontal" >
 
         <LinearLayout
