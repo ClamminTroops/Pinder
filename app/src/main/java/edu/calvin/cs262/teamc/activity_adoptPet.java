@@ -193,11 +193,13 @@ public class activity_adoptPet extends AppCompatActivity {
         Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
 
         // Remove the dog liked and advance the view pager
+        int idx = viewPager.getCurrentItem();
         dogs.remove(index);
         adapter.notifyDataSetChanged();
         viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem( viewPager.getCurrentItem() == dogs.size() ? 0
-                : viewPager.getCurrentItem() + 1);
+        viewPager.setCurrentItem( idx == dogs.size() ? 0
+                : idx);
+
 
     }
 
