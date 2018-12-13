@@ -12,8 +12,50 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/bluebackground"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@drawable/pinderlogov3"
+            android:orientation="horizontal">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/houseicon"
+                    android:onClick="goHome"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintHorizontal_bias="0.029"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/question"
+                    android:onClick="getHelp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
 
 
         <TextView
@@ -27,10 +69,11 @@
 
 
         <ImageView
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:id="@+id/photo_profile"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/vanderlinden" />
+            app:srcCompat="@drawable/person" />
 
         <LinearLayout
             android:layout_width="325dp"
@@ -55,6 +98,7 @@
                     android:text="@string/name" />
 
                 <EditText
+                    android:id="@+id/name_profile"
                     android:layout_width="150dp"
                     android:layout_height="30dp"
                     android:layout_gravity="end"
@@ -78,6 +122,7 @@
                     android:text="@string/email" />
 
                 <EditText
+                    android:id="@+id/email_profile"
                     android:layout_width="150dp"
                     android:layout_height="30dp"
                     android:layout_gravity="end"
@@ -101,6 +146,7 @@
                     android:text="@string/location" />
 
                 <EditText
+                    android:id="@+id/location_profile"
                     android:layout_width="135dp"
                     android:layout_height="30dp"
                     android:layout_gravity="end"
@@ -125,20 +171,19 @@
                 android:layout_width="125dp"
                 android:layout_height="45dp"
                 android:layout_gravity="start"
-                android:text="My Matches"
-                android:background="@drawable/bluebutton"
                 android:layout_marginEnd="20dp"
-                />
+                android:background="@drawable/bluebutton"
+                android:onClick="onMyMatchesBtnPressed"
+                android:text="@string/my_matches_btn" />
 
             <Button
                 android:id="@+id/saveProfileChanges"
                 android:layout_width="140dp"
                 android:layout_height="45dp"
                 android:layout_gravity="end"
-                android:text="Save Changes"
                 android:background="@drawable/greenbutton"
                 android:onClick="saveChanges"
-                />
+                android:text="Save Changes" />
 
         </LinearLayout>
 

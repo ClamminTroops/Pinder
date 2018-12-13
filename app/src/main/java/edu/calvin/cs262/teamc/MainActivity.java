@@ -4,7 +4,23 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * class for Main Activity
@@ -18,12 +34,57 @@ import android.view.View;
  * @since 16-11-2018
  */
 public class MainActivity extends AppCompatActivity {
+    Integer personID=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        Bundle extras = getIntent().getExtras();
+        if (extras.containsKey("personID"))
+        {
+            Log.d("I THINK I HAVE A PERSON ID", String.valueOf(extras.getInt("personID")));
+            personID = extras.getInt("personID");
+        } else
+        {
+            // get loginID
+            String requestUrl =
+                    String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",
+                            getIntent().getStringExtra("loginID"));
+
+            StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                    requestUrl, new Response.Listener<String>() {
+
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONObject jsonObj = new JSONObject(response);
+                        JSONArray arrJson = jsonObj.getJSONArray("items");
+                        JSONObject object = arrJson.getJSONObject(0);
+                        personID = Integer.parseInt(object.getString("personID"));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                }
+
+            }){
+
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> postMap = new HashMap<>();
+                    postMap.put("Content-Type","application/json");
+                    return postMap;
+                }
+            };
+            //make the request to your server as indicated in your request url
+            Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
+        }
     }
 
     /**
@@ -32,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void onListPethBtnPressed(View view) {
         Intent list = new Intent(MainActivity.this, activity_PetforAdoption.class);
+        list.putExtra("personID",personID);
         startActivity(list);
     }
 
@@ -41,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void onAdoptPetPressed(View view) {
         Intent adopt = new Intent(MainActivity.this, activity_adoptPet.class);
+        adopt.putExtra("personID",personID);
         startActivity(adopt);
     }
 
@@ -60,14 +123,20 @@ public class MainActivity extends AppCompatActivity {
      */
     public void onProfilePressed(View view) {
         Intent match = new Intent(MainActivity.this, ProfileActivity.class);
+        match.putExtra("loginID",getIntent().getStringExtra("loginID"));
+        match.putExtra("personID", personID);
         startActivity(match);
     }
 
-    /* Handler for My Matches Button
+    /**
+     * Handler for My Matches Button
      * Launches MyMatchesActivity
      */
     public void onMyMatchesBtnPressed(View view) {
         Intent i = new Intent(MainActivity.this, MyMatchesActivity.class);
+
+        i.putExtra("personID", personID);
+
         startActivity(i);
     }
 }
