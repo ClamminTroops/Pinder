@@ -62,6 +62,7 @@
         <item name="collie">Collie</item>
         <item name="bulldog">Bulldog</item>
         <item name="beagle">Beagle</item>
+        <item name="other">Other</item>
     </string-array>
     <string name="title_activity_my_matches">MyMatchesActivity</string>
     <string name="action_settings">Settings</string>
@@ -81,11 +82,11 @@
     <string name="questionThreeTxt">3. Energy</string>
     <string name="question3ATxt">Quiet and relaxed</string>
     <string name="question3BTxt">Playful and curious</string>
-    <string name="question3CTxt">Active and hyper</string>
+    <string name="question3CTxt">Active and adventurous</string>
     <string name="questionFourTxt">4. Sociability</string>
     <string name="question4ATxt">Keeps more to themselves</string>
     <string name="question4BTxt">Is friendly and interactive</string>
-    <string name="question4CTxt">Needs lots of attention</string>
+    <string name="question4CTxt">Loves lots of attention</string>
     <string name="questionFiveTxt">5. Trainability</string>
     <string name="question5ATxt">Can receive basic training</string>
     <string name="question5BTxt">Can be trained to do some tricks</string>
@@ -126,5 +127,41 @@
 
     <string name="myMatches_noMatches">No matches</string>
     <string name="myMatches_myMAthces">My Matches:</string>
+    <string name="home">Home</string>
+    <string name="help">Help</string>
+    <string name="toc">1. Creating An Account\n2. Taking the Quiz\n3. Listing A Pet\n4. Adopting A Pet\n5. Updating My Profile</string>
+    <string name="HelpCreateAccount">New Pinder users can create an account by inputting their username and password into the login screen. Users are then prompted to update their profile with their personal information.
+        \n\n<b>1. Inputting a username and password</b>
+        \nOpen Pinder and fill out your unique username and password. Once your password and username have been approved, you may select the button \'Create an Account.\'
+        \n\n2. Editing Your Profile
+        \nAfter you have made an account, Pinder will direct you to the \'My Profile\' page, where you will input your name, email, and location. Afterwards, select the button “save changes.” Your profile will now be updated to your unique information.
+        \n\n3. Uploading Your Profile Photo
+        \nOnce you have added your information, you can update your profile picture by clicking the plus sign by the profile picture section.</string>
+    <string name="HelpQuiz">Pinder users can take a quiz to find out which dog breed works best with your lifestyle.
+        \n\n1. Entering The Quiz
+        \nOn the main page, click the Quiz button. Once you hit \'Take Quiz,\' you will need to confirm whether or not you want to take the quiz. If you choose \'no,\' the app will take you back to the main menu. If you choose \'yes,\' the app will take you to the quiz.
+        \n\n2. Taking the Quiz
+        \nYou will be asked ten questions to match you with your dog breed based on compatibility, preferences, and lifestyle. Scroll through the questions and choose an answer for each question. Click finish.
+        \n\n3. Viewing Your Results
+        \nYour results will appear and override any results from a previous quiz.</string>
+    <string name="HelpListAPet">Pinder allows shelters, businesses, and local dog owners to put dogs up for adoption.
+        \n\n1. Uploading Your Pet
+        \nLogin to your account and select “List A Pet.” Enter your pet details (name, gender, breed) into the form, including a URL link to a photo. Once finished, select “List A Pet.” Your pet will now be in the Pinder database, for someone to contact you.</string>
+    <string name="helpAdoptAPet">You can use Pinder to browse for local dogs and find the pet that’s right for you.
+        \n\n1. Navigating to the Adopt A Pet Screen
+        \nFrom the home screen, select “Adopt A Pet.”
+        \n\n2. Selecting Your Match
+        \nPinder is modeled after the popular dating app interface, Tinder. After looking at the pet, you can either click the “X” or the heart. If you click the heart option, the dog will be added to your matches. If you click the X, the app will send you to the next pet profile.
+        \n\n3. Contacting The Seller
+        \nAfter you have clicked on a heart, your dog will enter your “my matches” page, located in your profile. Click on the profile of the dog you’re interested in, and a match page will pop up, with the contact seller information. If you select the “contact seller” button, your phone will open up your email app to send an email to the seller.</string>
+    <string name="HelpUpdateProfile">Update your Pinder profile following these simple steps.
+        \n\n1. Navigating to the My Profile Screen
+        \nClick on the \'My Profile\' Button located on the bottom right corner of the main screen.
+        \n\n2. Updating My Profile
+        \nInformation Click on the input field to the right of \'Name\' and add or change the text to match your full name. Click on the input field to the right of \'Email\' and add or change the text to match your current email. Click on the input field to the right of \'Location\' and add or change the text to match your current city.
+        \n\n3. Updating Photo
+        \nOnce you click on person, Pinder will ask for permission to access your camera. Once you click okay, you will be asked to take a picture of yourself. After you take the picture, that photo will be your new profile picture.
+        \n\n4. Saving Your Changes
+        \nOnce you have added or updated these input fields, click on the \'Save Changes\' button on the bottom right. This will save your information and bring you to the home page.</string>
 
 </resources>

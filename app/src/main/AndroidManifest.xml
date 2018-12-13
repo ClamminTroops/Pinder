@@ -29,6 +29,7 @@
         <activity android:name=".ResultActivity" />
         <activity android:name=".StartQuiz" />
         <activity android:name=".ProfileActivity" />
+        <activity android:name=".Help" />
         <activity android:name=".TakeQuiz" />
         <activity
             android:name=".MyMatchesActivity"
