@@ -142,6 +142,7 @@ public class activity_adoptPet extends AppCompatActivity {
      */
     public void goHome(View view) {
         Intent home = new Intent(activity_adoptPet.this, MainActivity.class);
+        home.putExtra("personID", getIntent().getExtras().getInt("personID"));
         startActivity(home);
     }
 

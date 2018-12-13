@@ -72,8 +72,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
 
     public Button yesbutton;
     File imageURL = null ;
-    Integer exampleString;
-
+    int exampleString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,6 +150,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
      */
     public void goHome(View view) {
         Intent home = new Intent(activity_PetforAdoption.this, MainActivity.class);
+        home.putExtra("personID", exampleString);
         startActivity(home);
     }
 
@@ -165,6 +165,7 @@ public class activity_PetforAdoption extends AppCompatActivity {
      */
     public void getHelp(View view) {
         Intent home = new Intent(activity_PetforAdoption.this, Help.class);
+        home.putExtra("personID", exampleString);
         startActivity(home);
     }
 

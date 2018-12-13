@@ -143,6 +143,7 @@ public class MyMatchesActivity extends AppCompatActivity {
      */
     public void goHome(View view) {
         Intent home = new Intent(MyMatchesActivity.this, MainActivity.class);
+        home.putExtra("personID",personID);
         startActivity(home);
     }
 

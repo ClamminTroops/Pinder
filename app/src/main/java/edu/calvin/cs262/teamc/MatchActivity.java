@@ -152,6 +152,7 @@ public class MatchActivity extends AppCompatActivity {
      */
     public void goHome(View view) {
         Intent home = new Intent(MatchActivity.this, MainActivity.class);
+        home.putExtra("loginID", getIntent().getStringExtra("loginID"));
         startActivity(home);
     }
 

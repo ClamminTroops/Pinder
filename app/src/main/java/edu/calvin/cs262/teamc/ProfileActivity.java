@@ -267,6 +267,7 @@ public class ProfileActivity extends AppCompatActivity {
      */
     public void goHome(View view) {
         Intent home = new Intent(ProfileActivity.this, MainActivity.class);
+        home.putExtra("loginID", loginID);
         startActivity(home);
     }
 

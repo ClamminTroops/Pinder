@@ -41,44 +41,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        Bundle extras = getIntent().getExtras();
+        if (extras.containsKey("personID"))
+        {
+            Log.d("I THINK I HAVE A PERSON ID", String.valueOf(extras.getInt("personID")));
+            personID = extras.getInt("personID");
+        } else
+        {
+            // get loginID
+            String requestUrl =
+                    String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",
+                            getIntent().getStringExtra("loginID"));
 
-        // get loginID
-        String requestUrl =
-                String.format("https://calvincs262-fall2018-teamc.appspot.com/pinder/v1/person/%s",
-                        getIntent().getStringExtra("loginID"));
+            StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                    requestUrl, new Response.Listener<String>() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                requestUrl, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONObject jsonObj = new JSONObject(response);
+                        JSONArray arrJson = jsonObj.getJSONArray("items");
+                        JSONObject object = arrJson.getJSONObject(0);
+                        personID = Integer.parseInt(object.getString("personID"));
 
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObj = new JSONObject(response);
-                    JSONArray arrJson = jsonObj.getJSONArray("items");
-                    JSONObject object = arrJson.getJSONObject(0);
-                    personID = Integer.parseInt(object.getString("personID"));
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-            }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                }
 
-        }){
+            }){
 
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> postMap = new HashMap<>();
-                postMap.put("Content-Type","application/json");
-                return postMap;
-            }
-        };
-        //make the request to your server as indicated in your request url
-        Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
-
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> postMap = new HashMap<>();
+                    postMap.put("Content-Type","application/json");
+                    return postMap;
+                }
+            };
+            //make the request to your server as indicated in your request url
+            Volley.newRequestQueue(getApplicationContext()).add(stringRequest);
+        }
     }
 
     /**
