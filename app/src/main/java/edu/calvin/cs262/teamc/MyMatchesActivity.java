@@ -70,6 +70,7 @@ public class MyMatchesActivity extends AppCompatActivity {
                     // Convert response to JSON
                     JSONObject jsonObj = new JSONObject(response);
                     JSONArray arrJson = jsonObj.getJSONArray("items");
+
                     // Add each match to memory
                     for (int i=0; i<arrJson.length(); i++)
                     {
