@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
     public void onProfilePressed(View view) {
         Intent match = new Intent(MainActivity.this, ProfileActivity.class);
         match.putExtra("loginID",getIntent().getStringExtra("loginID"));
+        match.putExtra("personID", personID);
         startActivity(match);
     }
 

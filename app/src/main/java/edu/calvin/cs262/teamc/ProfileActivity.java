@@ -200,8 +200,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         Intent i = new Intent(ProfileActivity.this, MyMatchesActivity.class);
         i.putExtra("loginID",getIntent().getStringExtra("loginID"));
-        Log.e("personID-onMyMatchesbTnPressed", String.valueOf(personID));
-        i.putExtra("personID",personID);
+        i.putExtra("personID",getIntent().getIntExtra("personID", 0));
         startActivity(i);
     }
 

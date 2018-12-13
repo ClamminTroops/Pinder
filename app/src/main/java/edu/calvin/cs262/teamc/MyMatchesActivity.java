@@ -57,11 +57,10 @@ public class MyMatchesActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-             //   Toast.makeText(MyMatchesActivity.this, "Recieved Information!", Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObj = new JSONObject(response);
                     JSONArray arrJson = jsonObj.getJSONArray("items");
-                    //Log.e("JSON object",arrJson.toString());
+
                     for (int i=0; i<arrJson.length(); i++)
                     {
                         JSONObject object = arrJson.getJSONObject(i);
