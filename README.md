@@ -1,14 +1,5 @@
-## cs262x-Clammin-Troop
-CS 262 Software Engineering.
-Professor Keith Vander Linden.
-Calvin College, Group C, Final Project.
-
-### __Lab 3 Notes:__
--Dana's note for lab 3
--Caroline's note for lab3
-TESTING - Gavi
-*Dana's note for lab 3
-Hi it's Andre
+# Pinder
+### Created by Andrew Thomas, Dana Drosdik, Gavin Martin, Caroline Carlson, Justin Baskaran, and Sambridhi Acharya
 
 ### __Vision Statement:__
    Dogs are wonderful human companions, a man’s best friend, but choosing the right dog is not always easy. For some American adults, it’s the paralysis of endless breed options, for others, the limit on their time to conduct research, and for others still, the overwhelming thought of where to begin. Wherever you find yourself in your dog search, the android pet-finding app Pinder is just for you. After launching the app, Pinder guides the user through a survey, designed to match one’s personality, preferences, and lifestyle to compatible dog breeds. Pinder displays the results in a ranked list, containing detailed information, photos, and videos for each breed. 
